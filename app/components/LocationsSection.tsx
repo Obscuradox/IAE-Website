@@ -5,28 +5,32 @@ import Image from 'next/image'
 
 const LocationsSection = () => {
   return (
-    <section className="bg-white py-8 sm:py-12 lg:py-16">
+    <section id="locations" className="bg-white py-8 sm:py-12 lg:py-16">
       <div className="max-w-sm mx-auto px-4 sm:max-w-2xl sm:px-6 lg:max-w-7xl lg:px-8">
         {/* Section Header - Mobile optimized */}
         <div className="text-center mb-6 sm:mb-8 lg:mb-16">
-          <h2 className="text-[#151412] font-euclid-square text-2xl sm:text-3xl md:text-4xl lg:text-section-title-desktop font-light leading-tight mb-2 sm:mb-4">
+          <h2 className="text-[#151412] font-euclid-square font-light leading-tight mb-2 sm:mb-4 text-h2">
             2 Locations
           </h2>
-          <p className="text-[#151412] font-euclid-square text-sm sm:text-base lg:text-2xl leading-tight opacity-60">
-            Two Locations For Both The Digital And Physical World
+          <p className="text-[#151412] font-euclid-square leading-tight opacity-60 text-responsive-body">
+            Two locations for both the digital and physical world
           </p>
         </div>
 
         {/* Locations Cards - Mobile first */}
         <div className="flex flex-col gap-4 sm:flex-row sm:gap-6 lg:gap-8 justify-center">
           {/* IRL Location */}
-          <div className="relative w-full sm:w-1/2 lg:w-[704px] h-48 sm:h-64 lg:h-[400px] rounded-xl lg:rounded-[32px] overflow-hidden group">
-            <Image
-              src="/images/locations/irl-location.jpg"
-              alt="IRL Location"
-              fill
-              className="object-cover"
-            />
+          <div className="relative w-full sm:w-1/2 lg:w-[704px] h-48 sm:h-64 lg:h-[400px] rounded-2xl overflow-hidden group bg-[var(--color-image-bg)]">
+            <picture>
+              <source srcSet="/images/locations/irl-location.webp" type="image/webp" />
+              <Image
+                src="/images/locations/irl-location.jpg"
+                alt="IRL Location"
+                fill
+                className="object-cover"
+                loading="lazy"
+              />
+            </picture>
             
             {/* Content Overlay */}
             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center p-3 sm:p-4">
@@ -38,24 +42,28 @@ const LocationsSection = () => {
                 </svg>
               </div>
               
-              <h3 className="text-white font-euclid-square text-2xl sm:text-3xl lg:text-[64px] font-bold leading-tight uppercase mb-1 sm:mb-2 lg:mb-4">
+              <h3 className="text-white font-euclid-square font-bold leading-tight uppercase mb-1 sm:mb-2 lg:mb-4 text-h1">
                 IRL
               </h3>
               
-              <p className="text-white font-euclid-square text-xs sm:text-sm lg:text-xl leading-tight max-w-xs sm:max-w-sm lg:max-w-md">
+              <p className="text-white font-euclid-square leading-tight max-w-xs sm:max-w-sm lg:max-w-md text-responsive-body">
                 Experience the event in person at The Agenda, Dubai Media City
               </p>
             </div>
           </div>
 
           {/* Virtual Location */}
-          <div className="relative w-full sm:w-1/2 lg:w-[704px] h-48 sm:h-64 lg:h-[400px] rounded-xl lg:rounded-[32px] overflow-hidden group">
-            <Image
-              src="/images/locations/virtual-location.jpg"
-              alt="Virtual Location"
-              fill
-              className="object-cover"
-            />
+          <div className="relative w-full sm:w-1/2 lg:w-[704px] h-48 sm:h-64 lg:h-[400px] rounded-2xl overflow-hidden group bg-[var(--color-image-bg)]">
+            <picture>
+              <source srcSet="/images/locations/virtual-location.webp" type="image/webp" />
+              <Image
+                src="/images/locations/virtual-location.jpg"
+                alt="Virtual Location"
+                fill
+                className="object-cover"
+                loading="lazy"
+              />
+            </picture>
             
             {/* Content Overlay */}
             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center p-3 sm:p-4">
@@ -66,11 +74,11 @@ const LocationsSection = () => {
                 </svg>
               </div>
               
-              <h3 className="text-white font-euclid-square text-2xl sm:text-3xl lg:text-[64px] font-bold leading-tight uppercase mb-1 sm:mb-2 lg:mb-4">
+              <h3 className="text-white font-euclid-square font-bold leading-tight uppercase mb-1 sm:mb-2 lg:mb-4 text-h1">
                 Virtual
               </h3>
               
-              <p className="text-white font-euclid-square text-xs sm:text-sm lg:text-xl leading-tight max-w-xs sm:max-w-sm lg:max-w-md">
+              <p className="text-white font-euclid-square leading-tight max-w-xs sm:max-w-sm lg:max-w-md text-responsive-body">
                 Join from anywhere in the world through our immersive metaverse experience
               </p>
             </div>

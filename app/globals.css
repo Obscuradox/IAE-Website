@@ -1,64 +1,616 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&display=swap');
-
-/* Custom font imports for Euclid fonts - these would need to be replaced with actual font files */
-@font-face {
-  font-family: 'Euclid Circular A';
-  src: url('/fonts/EuclidCircularA-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+:root {
+  /* Color Variables */
+  --color-primary-blue: #3442AC;
+  --color-info-blue: #0054FD;
+  --color-white: #FFFFFF;
+  --color-light-cream: #FDF6E8;
+  --color-text-gray: #B8B8B8;
+  --color-dark-bg: #0D0D14;
+  --color-dark-container: #1A1A1A;
+  --color-dark-hover: #2A2A2A;
+  --color-image-bg: #1A1A1A; /* Background color for images */
+  
+  /* Typography Variables */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-euclid: 'Euclid Circular A', var(--font-primary);
+  --font-euclid-square: 'Euclid Square', var(--font-primary);
+  --font-euclid-circular-b: 'Euclid Circular B', var(--font-primary);
+  --font-noto: 'Noto Sans', var(--font-primary);
+  --font-ibm-plex: 'IBM Plex Sans', var(--font-primary);
+  --font-ibm-plex-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  --font-golos: 'Golos Text', var(--font-primary);
+  
+  /* Font Size Variables with Proper Responsive Scaling */
+  --font-size-hero-main: clamp(3rem, 10vw, 8rem);
+  --font-size-hero-sub: clamp(1.25rem, 3vw, 2.5rem);
+  --font-size-section-title: clamp(2.5rem, 8vw, 6rem);
+  --font-size-h1: clamp(2.5rem, 8vw, 6rem);
+  --font-size-h2: clamp(2rem, 6vw, 4rem);
+  --font-size-h3: clamp(1.5rem, 4vw, 2.5rem);
+  --font-size-button: clamp(1rem, 2vw, 1.25rem);
+  --font-size-button-mobile: clamp(1.125rem, 2.5vw, 1.375rem);
+  --font-size-stat-number: clamp(1.125rem, 2.5vw, 1.75rem);
+  --font-size-stat-label: clamp(0.875rem, 1.8vw, 1.125rem);
+  --font-size-body: clamp(1rem, 2vw, 1.25rem);
+  --font-size-small: clamp(0.875rem, 1.5vw, 1rem);
+  
+  /* Spacing Variables */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  
+  /* Animation Variables */
+  --animation-duration-fast: 0.2s;
+  --animation-duration-normal: 0.3s;
+  --animation-duration-slow: 0.5s;
+  --animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Border Radius Variables - Updated for consistency */
+  --border-radius-xs: 0.25rem;
+  --border-radius-sm: 0.5rem;
+  --border-radius-md: 0.75rem;
+  --border-radius-lg: 1rem;
+  --border-radius-xl: 1.5rem;
+  --border-radius-2xl: 2rem;
+  --border-radius-3xl: 2.5rem;
+  
+  /* Button Variables */
+  --button-height-mobile: 3rem; /* 48px minimum touch target */
+  --button-height-desktop: 2.75rem;
+  --button-padding-mobile: 1rem 1.5rem;
+  --button-padding-desktop: 0.75rem 2rem;
+  
+  /* Shadow Variables */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
-@font-face {
-  font-family: 'Euclid Circular A';
-  src: url('/fonts/EuclidCircularA-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Euclid Square';
-  src: url('/fonts/EuclidSquare-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
+/* Base Styles */
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  font-family: 'Inter', sans-serif;
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-primary);
 }
 
 body {
-  color: #FFFFFF;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-  min-height: 100vh;
+  color: var(--color-white);
+  background: var(--color-dark-bg);
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
-a {
-  color: inherit;
+/* Hide scrollbars but keep functionality */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Typography Classes */
+.text-responsive-body {
+  font-size: var(--font-size-body);
+  line-height: 1.6;
+}
+
+.text-responsive-small {
+  font-size: var(--font-size-small);
+  line-height: 1.5;
+}
+
+.text-hero-main {
+  font-size: var(--font-size-hero-main);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.text-hero-sub {
+  font-size: var(--font-size-hero-sub);
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.text-section-title {
+  font-size: var(--font-size-section-title);
+  line-height: 1.1;
+  font-weight: 300;
+}
+
+/* Heading Classes */
+.text-h1 {
+  font-size: var(--font-size-h1);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.text-h2 {
+  font-size: var(--font-size-h2);
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.text-h3 {
+  font-size: var(--font-size-h3);
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+/* Button Classes */
+.btn-primary {
+  background-color: var(--color-primary-blue);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-size-button);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--animation-duration-normal) var(--animation-easing);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: var(--button-height-desktop);
+  padding: var(--button-padding-desktop);
 }
 
-/* Fallback fonts if custom fonts don't load */
-.font-euclid {
-  font-family: 'Euclid Circular A', 'Arial', sans-serif;
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-size-button);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--animation-duration-normal) var(--animation-easing);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: var(--button-height-desktop);
+  padding: var(--button-padding-desktop);
 }
 
-.font-euclid-square {
-  font-family: 'Euclid Square', 'Arial', sans-serif;
+/* Mobile Button Styles */
+@media (max-width: 768px) {
+  .btn-primary,
+  .btn-secondary {
+    min-height: var(--button-height-mobile);
+    padding: var(--button-padding-mobile);
+    font-size: var(--font-size-button-mobile);
+  }
+}
+
+.btn-primary:hover {
+  background-color: #2a3490;
+  transform: translateY(-1px);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-white);
+  color: var(--color-dark-bg);
+}
+
+/* Safe Font Loading */
+@font-face {
+  font-family: 'Euclid Circular A';
+  font-display: swap;
+  src: url('/fonts/euclid-circular-a.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Euclid Square';
+  font-display: swap;
+  src: url('/fonts/euclid-square.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Euclid Circular B';
+  font-display: swap;
+  src: url('/fonts/euclid-circular-b.woff2') format('woff2');
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+/* Scroll Animation Classes */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-animate-fade {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate-fade.animate-in {
+  opacity: 1;
+}
+
+.scroll-animate-slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate-slide-left.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-animate-slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate-slide-right.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-animate-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate-scale.animate-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.scroll-animate-stagger {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate-stagger.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation delays for child elements */
+.scroll-animate-stagger:nth-child(1) { transition-delay: 0.1s; }
+.scroll-animate-stagger:nth-child(2) { transition-delay: 0.2s; }
+.scroll-animate-stagger:nth-child(3) { transition-delay: 0.3s; }
+.scroll-animate-stagger:nth-child(4) { transition-delay: 0.4s; }
+.scroll-animate-stagger:nth-child(5) { transition-delay: 0.5s; }
+.scroll-animate-stagger:nth-child(6) { transition-delay: 0.6s; }
+.scroll-animate-stagger:nth-child(7) { transition-delay: 0.7s; }
+.scroll-animate-stagger:nth-child(8) { transition-delay: 0.8s; }
+.scroll-animate-stagger:nth-child(9) { transition-delay: 0.9s; }
+.scroll-animate-stagger:nth-child(10) { transition-delay: 1.0s; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Performance Optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* Container Utilities */
+.container-responsive {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+@media (min-width: 640px) {
+  .container-responsive {
+    padding: 0 var(--spacing-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-responsive {
+    padding: 0 var(--spacing-2xl);
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-responsive {
+    padding: 0 var(--spacing-3xl);
+  }
+}
+
+/* Image Optimization with Background Color - Exclude logos */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Only apply background color to content images, not logos */
+img:not([alt*="logo"]):not([alt*="Logo"]):not([src*="logo"]) {
+  background-color: var(--color-image-bg);
+}
+
+/* Smooth Scrolling for Partners */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Focus Styles for Accessibility */
+button:focus,
+a:focus {
+  outline: 2px solid var(--color-primary-blue);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Spaceship-themed star animation background */
+.stars, .stars2, .stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.stars {
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 160px 30px, #ddd, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: zoom 20s infinite linear;
+  opacity: 0.5;
+}
+
+.stars2 {
+  background-image: 
+    radial-gradient(1px 1px at 40px 60px, #fff, transparent),
+    radial-gradient(1px 1px at 80px 10px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(2px 2px at 120px 50px, #eee, transparent),
+    radial-gradient(1px 1px at 160px 90px, rgba(255,255,255,0.9), transparent);
+  background-repeat: repeat;
+  background-size: 250px 120px;
+  animation: zoom 10s infinite linear;
+  opacity: 0.3;
+}
+
+.stars3 {
+  background-image: 
+    radial-gradient(1px 1px at 10px 10px, #fff, transparent),
+    radial-gradient(2px 2px at 60px 60px, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1px 1px at 100px 20px, #ddd, transparent),
+    radial-gradient(1px 1px at 140px 70px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 180px 40px, #fff, transparent);
+  background-repeat: repeat;
+  background-size: 300px 150px;
+  animation: zoom 30s infinite linear;
+  opacity: 0.2;
+}
+
+@keyframes zoom {
+  from {
+    transform: translateZ(0px);
+  }
+  to {
+    transform: translateZ(1000px);
+  }
+}
+
+/* Alternative moving stars animation */
+@keyframes move-stars {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+/* Shooting star effect */
+.stars::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.8);
+  animation: shooting-star 3s infinite linear;
+  opacity: 0;
+}
+
+@keyframes shooting-star {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) translateY(0px) rotate(45deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(calc(100vw + 100px)) translateY(-100px) rotate(45deg);
+  }
+}
+
+/* Subtle space background for packages section */
+.stars-subtle, .stars2-subtle, .stars3-subtle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.stars-subtle {
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.2), transparent),
+    radial-gradient(0.5px 0.5px at 90px 40px, rgba(255,255,255,0.4), transparent),
+    radial-gradient(0.5px 0.5px at 130px 80px, rgba(255,255,255,0.1), transparent),
+    radial-gradient(1px 1px at 160px 30px, rgba(255,255,255,0.25), transparent);
+  background-repeat: repeat;
+  background-size: 300px 200px;
+  animation: subtle-zoom 25s infinite linear;
+  opacity: 0.3;
+}
+
+.stars2-subtle {
+  background-image: 
+    radial-gradient(0.5px 0.5px at 40px 60px, rgba(255,255,255,0.2), transparent),
+    radial-gradient(0.5px 0.5px at 80px 10px, rgba(255,255,255,0.15), transparent),
+    radial-gradient(1px 1px at 120px 50px, rgba(255,255,255,0.25), transparent),
+    radial-gradient(0.5px 0.5px at 160px 90px, rgba(255,255,255,0.3), transparent);
+  background-repeat: repeat;
+  background-size: 400px 250px;
+  animation: subtle-zoom 15s infinite linear;
+  opacity: 0.2;
+}
+
+.stars3-subtle {
+  background-image: 
+    radial-gradient(0.5px 0.5px at 10px 10px, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 60px 60px, rgba(255,255,255,0.1), transparent),
+    radial-gradient(0.5px 0.5px at 100px 20px, rgba(255,255,255,0.15), transparent),
+    radial-gradient(0.5px 0.5px at 140px 70px, rgba(255,255,255,0.25), transparent),
+    radial-gradient(1px 1px at 180px 40px, rgba(255,255,255,0.2), transparent);
+  background-repeat: repeat;
+  background-size: 500px 300px;
+  animation: subtle-zoom 35s infinite linear;
+  opacity: 0.15;
+}
+
+@keyframes subtle-zoom {
+  from {
+    transform: translateZ(0px);
+  }
+  to {
+    transform: translateZ(800px);
+  }
+}
+
+/* Subtle shooting star effect */
+.stars-subtle::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.3);
+  animation: subtle-shooting-star 8s infinite linear;
+  opacity: 0;
+}
+
+.stars2-subtle::before {
+  content: '';
+  position: absolute;
+  top: 60%;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.2);
+  animation: subtle-shooting-star 12s infinite linear;
+  animation-delay: 4s;
+  opacity: 0;
+}
+
+@keyframes subtle-shooting-star {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px) translateY(0px) rotate(45deg);
+  }
+  5% {
+    opacity: 0.6;
+  }
+  95% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(calc(100vw + 50px)) translateY(-50px) rotate(45deg);
+  }
 } 

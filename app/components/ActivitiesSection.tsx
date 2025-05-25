@@ -2,84 +2,117 @@
 
 import React from 'react'
 import Image from 'next/image'
+import useScrollAnimation from '../hooks/useScrollAnimation'
 
 const ActivitiesSection = () => {
+  const { elementRef: sectionRef, isVisible: sectionVisible } = useScrollAnimation<HTMLElement>()
+  const { elementRef: headerRef, isVisible: headerVisible } = useScrollAnimation<HTMLDivElement>()
+  const { elementRef: gridRef, isVisible: gridVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.05 })
+
+  // Activity data with WebP format and fallbacks
   const activities = [
-    { name: 'Innovators pitches', image: '/images/activities/innovators-pitches.jpg' },
-    { name: 'Panels', image: '/images/activities/panels.jpg' },
-    { name: 'Lunchs & dinners', image: '/images/activities/lunch-dinners.jpg' },
-    { name: 'Runway show', image: '/images/activities/runway-show.jpg' },
-    { name: 'Workshops', image: '/images/activities/workshops.jpg' },
-    { name: 'Audience voting', image: '/images/activities/audience-voting.jpg' },
-    { name: 'Keynote speech', image: '/images/activities/keynote-speech.jpg' },
-    { name: 'Digital Metaverse Twin', image: '/images/activities/digital-metaverse.jpg' },
-    { name: 'Dance performance', image: '/images/activities/dance-performance.jpg' },
-    { name: 'Afterparty', image: '/images/activities/afterparty.jpg' }
+    { 
+      name: 'Afterparty', 
+      image: '/images/activities/afterparty.webp',
+      fallback: '/images/activities/afterparty.jpg'
+    },
+    { 
+      name: 'Dance Performance', 
+      image: '/images/activities/dance-performance.webp',
+      fallback: '/images/activities/dance-performance.jpg'
+    },
+    { 
+      name: 'Digital Metaverse', 
+      image: '/images/activities/digital-metaverse.webp',
+      fallback: '/images/activities/digital-metaverse.jpg'
+    },
+    { 
+      name: 'Keynote Speech', 
+      image: '/images/activities/keynote-speech.webp',
+      fallback: '/images/activities/keynote-speech.jpg'
+    },
+    { 
+      name: 'Audience Voting', 
+      image: '/images/activities/audience-voting.webp',
+      fallback: '/images/activities/audience-voting.jpg'
+    },
+    { 
+      name: 'Workshops', 
+      image: '/images/activities/workshops.webp',
+      fallback: '/images/activities/workshops.jpg'
+    },
+    { 
+      name: 'Runway Show', 
+      image: '/images/activities/runway-show.webp',
+      fallback: '/images/activities/runway-show.jpg'
+    },
+    { 
+      name: 'Lunch & Dinners', 
+      image: '/images/activities/lunch-dinners.webp',
+      fallback: '/images/activities/lunch-dinners.jpg'
+    },
+    { 
+      name: 'Panels', 
+      image: '/images/activities/panels.webp',
+      fallback: '/images/activities/panels.jpg'
+    },
+    { 
+      name: 'Innovators Pitches', 
+      image: '/images/activities/innovators-pitches.webp',
+      fallback: '/images/activities/innovators-pitches.jpg'
+    }
   ]
 
   return (
-    <section className="bg-[#FDF6E8] py-8 sm:py-12 lg:py-16">
-      <div className="max-w-sm mx-auto px-4 sm:max-w-2xl sm:px-6 lg:max-w-7xl lg:px-8">
-        {/* Section Header - Mobile optimized */}
-        <div className="text-center mb-6 sm:mb-8 lg:mb-16">
-          <h2 className="text-[#151412] font-euclid-square text-2xl sm:text-3xl md:text-4xl lg:text-section-title-desktop font-light leading-tight">
-            What awaits you now?
+    <section 
+      ref={sectionRef}
+      className={`bg-black py-8 sm:py-12 lg:py-16 scroll-animate ${sectionVisible ? 'animate-in' : ''}`}
+    >
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-[248px]">
+        {/* Section Title with responsive typography */}
+        <div 
+          ref={headerRef}
+          className={`text-center mb-8 sm:mb-12 lg:mb-16 scroll-animate-slide-left ${headerVisible ? 'animate-in' : ''}`}
+        >
+          <h2 
+            className="text-white font-euclid-square font-light leading-tight text-h2"
+          >
+            Activities
           </h2>
         </div>
 
-        {/* Mobile: 2 columns, 5 rows - Mobile first */}
-        <div className="grid grid-cols-2 gap-3 gap-y-4 sm:hidden">
+        {/* Activities Grid with consistent 1rem gap */}
+        <div 
+          ref={gridRef}
+          className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 scroll-animate-fade ${gridVisible ? 'animate-in' : ''}`}
+        >
           {activities.map((activity, index) => (
-            <div key={`mobile-${index}`} className="flex flex-col gap-2 group cursor-pointer">
-              <div className="relative w-full h-24 rounded-lg overflow-hidden bg-gray-100">
-                <Image
-                  src={activity.image}
-                  alt={activity.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+            <div 
+              key={index} 
+              className={`relative group scroll-animate-stagger ${gridVisible ? 'animate-in' : ''}`}
+              style={{ transitionDelay: `${index * 0.1}s` }}
+            >
+              {/* Activity Image with WebP support */}
+              <div className="relative w-full h-32 sm:h-40 lg:h-48 xl:h-56 overflow-hidden rounded-2xl bg-[var(--color-image-bg)]">
+                <picture>
+                  <source srcSet={activity.image} type="image/webp" />
+                  <Image
+                    src={activity.fallback}
+                    alt={activity.name}
+                    fill
+                    className="object-cover transition-transform duration-300"
+                    loading="lazy"
+                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
+                  />
+                </picture>
+                
+                {/* Overlay with activity name */}
+                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-3 sm:p-4">
+                  <h3 className="text-white font-euclid-square font-medium leading-tight text-xs sm:text-sm lg:text-base">
+                    {activity.name}
+                  </h3>
+                </div>
               </div>
-              <h3 className="text-[#151412] font-euclid-square text-xs leading-tight font-normal text-center px-1">
-                {activity.name}
-              </h3>
-            </div>
-          ))}
-        </div>
-
-        {/* Tablet: 3 columns, 4 rows (with last row having 1 item centered) */}
-        <div className="hidden sm:grid md:hidden grid-cols-3 gap-4 gap-y-6">
-          {activities.map((activity, index) => (
-            <div key={`tablet-${index}`} className={`flex flex-col gap-3 group cursor-pointer ${index === 9 ? 'col-start-2' : ''}`}>
-              <div className="relative w-full h-32 rounded-xl overflow-hidden bg-gray-100">
-                <Image
-                  src={activity.image}
-                  alt={activity.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <h3 className="text-[#151412] font-euclid-square text-sm leading-tight font-normal text-center">
-                {activity.name}
-              </h3>
-            </div>
-          ))}
-        </div>
-
-        {/* Desktop: 5 columns, 2 rows as original */}
-        <div className="hidden md:grid grid-cols-5 gap-6">
-          {activities.map((activity, index) => (
-            <div key={`desktop-${index}`} className="flex flex-col gap-[18px] group cursor-pointer">
-              <div className="relative w-full h-[209px] rounded-xl overflow-hidden">
-                <Image
-                  src={activity.image}
-                  alt={activity.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <h3 className="text-[#151412] font-euclid-square text-lg leading-[1.5] font-normal">
-                {activity.name}
-              </h3>
             </div>
           ))}
         </div>

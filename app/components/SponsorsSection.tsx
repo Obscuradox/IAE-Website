@@ -4,137 +4,168 @@ import React from 'react'
 import Image from 'next/image'
 
 const SponsorsSection = () => {
-  // All sponsors in one array
-  const allSponsors = [
-    { name: 'Dyson', logo: '/images/sponsors/dyson-logo.svg' },
-    { name: 'Red Bull', logo: '/images/sponsors/redbull-logo.svg' },
-    { name: 'Emaar', logo: '/images/sponsors/emaar-logo.svg' },
-    { name: 'Samsung', logo: '/images/sponsors/samsung-logo.svg' },
-    { name: 'Marie Claire', logo: '/images/sponsors/marie-claire-logo.svg' },
-    { name: 'Steve Madden', logo: '/images/sponsors/steve-madden-logo.svg' },
-    { name: 'Hoods', logo: '/images/sponsors/hoods-logo.svg' },
-    { name: 'Fashion TV', logo: '/images/sponsors/fashion-tv-logo.svg' },
-    { name: 'Blinx', logo: '/images/sponsors/blinx-logo.svg' },
-    { name: 'Vogue', logo: '/images/sponsors/vogue-logo.svg' },
-    { name: 'MiBitLabs', logo: '/images/sponsors/mibitlabs-logo.svg' },
-    { name: 'Adidas', logo: '/images/sponsors/adidas-logo.svg' }
+  // Sponsor data using SVG format for optimal performance
+  const sponsors = [
+    { 
+      name: 'Dyson', 
+      image: '/images/sponsors/dyson-logo.svg'
+    },
+    { 
+      name: 'Red Bull', 
+      image: '/images/sponsors/redbull-logo.svg'
+    },
+    { 
+      name: 'Emaar', 
+      image: '/images/sponsors/emaar-logo.svg'
+    },
+    { 
+      name: 'Samsung', 
+      image: '/images/sponsors/samsung-logo.svg'
+    },
+    { 
+      name: 'Marie Claire', 
+      image: '/images/sponsors/marie-claire-logo.svg'
+    },
+    { 
+      name: 'Steve Madden', 
+      image: '/images/sponsors/steve-madden-logo.svg'
+    },
+    { 
+      name: 'Hoods', 
+      image: '/images/sponsors/hoods-logo.svg'
+    },
+    { 
+      name: 'Fashion TV', 
+      image: '/images/sponsors/fashion-tv-logo.svg'
+    },
+    { 
+      name: 'Blinx', 
+      image: '/images/sponsors/blinx-logo.svg'
+    },
+    { 
+      name: 'Vogue', 
+      image: '/images/sponsors/vogue-logo.svg'
+    },
+    { 
+      name: 'MiBitLabs', 
+      image: '/images/sponsors/mibitlabs-logo.svg'
+    },
+    { 
+      name: 'Adidas', 
+      image: '/images/sponsors/adidas-logo.svg'
+    }
   ]
 
-  // Split sponsors into two rows for mobile
-  const topRowSponsors = [
-    allSponsors[0], // Dyson
-    allSponsors[2], // Emaar
-    allSponsors[4], // Marie Claire
-    allSponsors[6], // Hoods
-    allSponsors[8], // Blinx
-    allSponsors[10] // MiBitLabs
-  ]
-
-  const bottomRowSponsors = [
-    allSponsors[1], // Red Bull
-    allSponsors[3], // Samsung
-    allSponsors[5], // Steve Madden
-    allSponsors[7], // Fashion TV
-    allSponsors[9], // Vogue
-    allSponsors[11] // Adidas
-  ]
-
-  // Create multiple copies for seamless infinite scroll
-  const infiniteLogos = [...allSponsors, ...allSponsors, ...allSponsors, ...allSponsors]
-  const infiniteTopRow = [...topRowSponsors, ...topRowSponsors, ...topRowSponsors, ...topRowSponsors]
-  const infiniteBottomRow = [...bottomRowSponsors, ...bottomRowSponsors, ...bottomRowSponsors, ...bottomRowSponsors]
+  // Duplicate sponsors for seamless infinite scroll
+  const duplicatedSponsors = [...sponsors, ...sponsors]
 
   return (
-    <section className="bg-[#0D0D14] py-8 sm:py-12 lg:py-16 overflow-hidden">
-      {/* Mobile-first container */}
-      <div className="w-full px-4 sm:px-8 md:px-16 lg:px-32 xl:px-[248px]">
-        {/* Section Title - Mobile optimized */}
-        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-          <h2 className="text-white font-euclid text-lg sm:text-xl lg:text-2xl font-medium">
+    <section className="bg-black py-8 sm:py-12 lg:py-16">
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-[248px]">
+        {/* Section Title with responsive typography */}
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 
+            className="text-white font-euclid-square font-light leading-tight text-h2"
+          >
             Previous and Current Event Sponsors
           </h2>
         </div>
 
-        {/* Mobile Layout - Two animated rows */}
+        {/* Mobile Layout - 2 columns with animated scroll */}
         <div className="block sm:hidden">
-          {/* Top Row - Moving left to right */}
-          <div className="relative mb-4">
-            <div className="flex animate-scroll-right w-max">
-              {infiniteTopRow.map((sponsor, index) => (
-                <div 
-                  key={`mobile-top-${index}`}
-                  className="flex-shrink-0 flex items-center justify-center bg-[#1A1A1A] rounded-lg border border-gray-800 mx-1"
-                  style={{ 
-                    width: '140px', 
-                    height: '80px',
-                    minWidth: '140px'
-                  }}
-                >
-                  <Image
-                    src={sponsor.logo}
-                    alt={`${sponsor.name} logo`}
-                    width={120}
-                    height={60}
-                    className="object-contain max-w-full max-h-full p-2 filter brightness-0 invert opacity-90"
-                  />
-                </div>
-              ))}
+          <div className="flex flex-col gap-4">
+            {/* First row - scrolling right */}
+            <div className="overflow-hidden">
+              <div className="flex gap-4 animate-scroll-right">
+                {duplicatedSponsors.slice(0, 12).map((sponsor, index) => (
+                  <div key={`row1-${index}`} className="flex-shrink-0 w-24 h-16">
+                    <div className="relative w-full h-full flex items-center justify-center rounded-lg p-2">
+                      <Image
+                        src={sponsor.image}
+                        alt={`${sponsor.name} logo`}
+                        fill
+                        className="object-contain filter brightness-0 invert"
+                        loading="lazy"
+                        sizes="96px"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Bottom Row - Moving right to left */}
-          <div className="relative">
-            <div className="flex animate-scroll-left w-max">
-              {infiniteBottomRow.map((sponsor, index) => (
-                <div 
-                  key={`mobile-bottom-${index}`}
-                  className="flex-shrink-0 flex items-center justify-center bg-[#1A1A1A] rounded-lg border border-gray-800 mx-1"
-                  style={{ 
-                    width: '140px', 
-                    height: '80px',
-                    minWidth: '140px'
-                  }}
-                >
-                  <Image
-                    src={sponsor.logo}
-                    alt={`${sponsor.name} logo`}
-                    width={120}
-                    height={60}
-                    className="object-contain max-w-full max-h-full p-2 filter brightness-0 invert opacity-90"
-                  />
-                </div>
-              ))}
+            {/* Second row - scrolling left */}
+            <div className="overflow-hidden">
+              <div className="flex gap-4 animate-scroll-left">
+                {duplicatedSponsors.slice(6, 18).map((sponsor, index) => (
+                  <div key={`row2-${index}`} className="flex-shrink-0 w-24 h-16">
+                    <div className="relative w-full h-full flex items-center justify-center rounded-lg p-2">
+                      <Image
+                        src={sponsor.image}
+                        alt={`${sponsor.name} logo`}
+                        fill
+                        className="object-contain filter brightness-0 invert"
+                        loading="lazy"
+                        sizes="96px"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Tablet and Desktop Layout - Single flowing line */}
-        <div className="hidden sm:block">
-          <div className="relative">
-            <div className="flex animate-scroll-right w-max">
-              {infiniteLogos.map((sponsor, index) => (
-                <div 
-                  key={`flowing-${index}`}
-                  className="flex-shrink-0 flex items-center justify-center bg-[#1A1A1A] rounded-lg border border-gray-800 mx-2 lg:mx-3 hover:bg-[#2A2A2A] transition-colors"
-                  style={{ 
-                    width: '280px', 
-                    height: '160px',
-                    minWidth: '280px'
-                  }}
-                >
-                  <Image
-                    src={sponsor.logo}
-                    alt={`${sponsor.name} logo`}
-                    width={240}
-                    height={120}
-                    className="object-contain max-w-full max-h-full p-4 filter brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
-                  />
-                </div>
-              ))}
+        {/* Tablet and Desktop Layout - Grid */}
+        <div className="hidden sm:grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 smooth-scroll">
+          {sponsors.map((sponsor, index) => (
+            <div key={index} className="flex items-center justify-center">
+              {/* Sponsor Logo with SVG optimization */}
+              <div className="relative w-full h-16 sm:h-20 lg:h-24 flex items-center justify-center rounded-lg p-2">
+                <Image
+                  src={sponsor.image}
+                  alt={`${sponsor.name} logo`}
+                  fill
+                  className="object-contain filter brightness-0 invert"
+                  loading="lazy"
+                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 16vw"
+                />
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
+
+      {/* Animation styles */}
+      <style jsx>{`
+        @keyframes scroll-right {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(0%);
+          }
+        }
+
+        @keyframes scroll-left {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+
+        .animate-scroll-right {
+          animation: scroll-right 20s linear infinite;
+          width: calc(200% + 1rem);
+        }
+
+        .animate-scroll-left {
+          animation: scroll-left 20s linear infinite;
+          width: calc(200% + 1rem);
+        }
+      `}</style>
     </section>
   )
 }
