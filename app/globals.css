@@ -66,7 +66,7 @@
   /* Button Variables */
   --button-height-mobile: 3rem; /* 48px minimum touch target */
   --button-height-desktop: 2.75rem;
-  --button-padding-mobile: 1rem 1.5rem;
+  --button-padding-mobile: 0.875rem 1.25rem;
   --button-padding-desktop: 0.75rem 2rem;
   
   /* Shadow Variables */
@@ -204,6 +204,18 @@ html {
     min-height: var(--button-height-mobile);
     padding: var(--button-padding-mobile);
     font-size: var(--font-size-button-mobile);
+    min-width: 140px; /* Ensure minimum width to prevent clipping */
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 360px) {
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    min-width: 120px;
   }
 }
 
@@ -613,4 +625,23 @@ a:focus {
     opacity: 0;
     transform: translateX(calc(100vw + 50px)) translateY(-50px) rotate(45deg);
   }
-} 
+}
+
+/* Gallery scroll animations */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-33.333%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

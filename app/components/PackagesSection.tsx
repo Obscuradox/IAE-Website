@@ -104,17 +104,7 @@ const PackagesSection = () => {
             {/* Content Container - Using flex-col with specific spacing instead of justify-between */}
             <div className="absolute inset-0 z-20 flex flex-col p-6 sm:p-8 lg:p-12">
               
-              {/* Top Section - Price and Badge */}
-              <div className="flex justify-between items-start mb-8 sm:mb-12 lg:mb-16">
-                <div className="bg-white/20 backdrop-blur-sm text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs lg:text-sm border border-white/30">
-                  Limited to 10 Spots Only
-                </div>
-                <div className="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 sm:px-5 sm:py-2.5 border border-white/30">
-                  <span className="text-white font-bold text-base sm:text-lg lg:text-xl">
-                    AED 35,000
-                  </span>
-                </div>
-              </div>
+              {/* Top Section - Removed pricing and limitation bubbles */}
 
               {/* Center Content - Reduced spacing */}
               <div className="text-center mb-8 sm:mb-12 lg:mb-16 flex-1 flex flex-col justify-center">

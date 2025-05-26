@@ -150,7 +150,7 @@ export default function HeroSection() {
       </div>
 
       {/* Main container - Mobile first */}
-      <div className="relative z-30 px-4 py-6 h-full flex flex-col justify-between max-w-sm mx-auto sm:max-w-2xl sm:px-6 lg:max-w-7xl lg:px-8">
+      <div className="relative z-30 px-3 py-6 h-full flex flex-col justify-between max-w-md mx-auto sm:max-w-2xl sm:px-6 lg:max-w-7xl lg:px-8">
         
         {/* Top section - Centered Combined Logo */}
         <div className="flex justify-center items-start pt-4">
@@ -241,16 +241,16 @@ export default function HeroSection() {
           </div>
 
           {/* Buttons with Email Links - Mobile optimized with proper touch targets */}
-          <div className="flex flex-col w-full gap-3 mb-8 sm:flex-row sm:gap-4 sm:w-auto sm:mb-12">
+          <div className="flex flex-col w-full gap-3 mb-8 px-2 sm:flex-row sm:gap-4 sm:w-auto sm:mb-12 sm:px-0">
             <a 
               href="mailto:contact@infinityaengines.com?subject=Ticket Inquiry&body=Hi, I'm interested in getting tickets for the Infinity Ængines × Fashion Factor event. Please provide more information."
-              className="btn-primary font-euclid-square text-center"
+              className="btn-primary font-euclid-square text-center flex-shrink-0"
             >
               Buy Tickets
             </a>
             <a 
               href="mailto:contact@infinityaengines.com?subject=Sponsorship Inquiry&body=Hi, I'm interested in becoming a sponsor for the Infinity Ængines × Fashion Factor event. Please send me the sponsorship packages and details."
-              className="btn-secondary font-euclid-square text-center"
+              className="btn-secondary font-euclid-square text-center flex-shrink-0"
             >
               View Sponsorship Packages
             </a>

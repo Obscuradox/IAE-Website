@@ -19,7 +19,7 @@ const FeaturesSection = () => {
       subtitle: "Audience Choice Awards",
       image: "/images/features/innovators-pitches.webp",
       fallback: "/images/features/innovators-pitches.jpg",
-      textColor: "text-[#151412]",
+      textColor: "text-black",
       bgColor: "bg-[#FAFAFA]"
     },
     {
@@ -56,7 +56,7 @@ const FeaturesSection = () => {
       description: "Future-proof your company with hands-on workshops on Web3, AR/VR, and AI—plus 1-year access to an immersive learning space.",
       image: "/images/features/expert-workshops.webp",
       fallback: "/images/features/expert-workshops.jpg",
-      textColor: "text-[#151412]",
+      textColor: "text-black",
       bgColor: "bg-[#353025]",
       isLarge: true
     }
@@ -109,16 +109,16 @@ const FeaturesSection = () => {
               {/* Content */}
               <div className="relative z-10 p-4 h-full flex flex-col justify-start">
                 <div className="space-y-1">
-                  <div className="text-white font-ibm-plex-mono text-lg leading-tight uppercase">
+                  <div className={`${feature.textColor} font-ibm-plex-mono text-lg leading-tight uppercase`}>
                     {feature.id}
                   </div>
-                  <h3 className="text-white font-euclid-circular-b text-xl font-bold leading-tight uppercase">
+                  <h3 className={`${feature.textColor} font-euclid-circular-b text-xl font-bold leading-tight uppercase`}>
                     {feature.title}
                   </h3>
-                  <div className="text-white font-ibm-plex-mono text-sm opacity-60">
+                  <div className={`${feature.textColor} font-ibm-plex-mono text-sm opacity-60`}>
                     learn more
                   </div>
-                  <p className="text-white font-euclid-square text-sm">
+                  <p className={`${feature.textColor} font-euclid-square text-sm`}>
                     {feature.description}
                   </p>
                 </div>
@@ -156,16 +156,16 @@ const FeaturesSection = () => {
               {/* Content */}
               <div className="relative z-10 p-6 h-full flex flex-col justify-start">
                 <div className="space-y-2">
-                  <div className="text-white font-ibm-plex-mono text-xl leading-tight uppercase">
+                  <div className={`${feature.textColor} font-ibm-plex-mono text-xl leading-tight uppercase`}>
                     {feature.id}
                   </div>
-                  <h3 className="text-white font-euclid-circular-b text-2xl font-bold leading-tight uppercase">
+                  <h3 className={`${feature.textColor} font-euclid-circular-b text-2xl font-bold leading-tight uppercase`}>
                     {feature.title}
                   </h3>
-                  <div className="text-white font-ibm-plex-mono text-base opacity-60">
+                  <div className={`${feature.textColor} font-ibm-plex-mono text-base opacity-60`}>
                     learn more
                   </div>
-                  <p className="text-white font-euclid-square text-sm">
+                  <p className={`${feature.textColor} font-euclid-square text-sm`}>
                     {feature.description}
                   </p>
                 </div>
@@ -350,16 +350,16 @@ const FeaturesSection = () => {
               {/* Content - positioned at top left */}
               <div className="relative z-10 p-6 lg:p-8 xl:p-10 h-full flex flex-col justify-start">
                 <div className="space-y-2 lg:space-y-3">
-                  <div className="text-[#151412] font-ibm-plex-mono text-2xl lg:text-3xl xl:text-[36px] leading-[1.3] uppercase">
+                  <div className="text-black font-ibm-plex-mono text-2xl lg:text-3xl xl:text-[36px] leading-[1.3] uppercase">
                     5
                   </div>
-                  <h3 className="text-[#151412] font-euclid-circular-b text-2xl lg:text-3xl xl:text-[40px] font-bold leading-[1.15] uppercase">
+                  <h3 className="text-black font-euclid-circular-b text-2xl lg:text-3xl xl:text-[40px] font-bold leading-[1.15] uppercase">
                     EXPERT<br />WORKSHOPS
                   </h3>
-                  <div className="text-[#151412] font-ibm-plex-mono text-base lg:text-lg xl:text-xl opacity-60">
+                  <div className="text-black font-ibm-plex-mono text-base lg:text-lg xl:text-xl opacity-80">
                     learn more
                   </div>
-                  <p className="text-[#151412] font-euclid-square text-sm lg:text-base xl:text-lg">
+                  <p className="text-black font-euclid-square text-sm lg:text-base xl:text-lg">
                     Future-proof your company with hands-on workshops on Web3, AR/VR, and AI—plus 1-year access to an immersive learning space.
                   </p>
                 </div>
