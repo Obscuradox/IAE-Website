@@ -23,12 +23,7 @@ const SpeakersSection = () => {
       image: '/images/speakers/jonny-dodge.webp',
       fallback: '/images/speakers/jonny-dodge.jpg'
     },
-    {
-      name: 'Marwan Al Zarouni',
-      title: 'A pioneer in blockchain adoption, Marwan leads the DBCC and DATF, driving the UAE\'s digital asset ecosystem.',
-      image: '/images/speakers/marwan-al-zarouni.webp',
-      fallback: '/images/speakers/marwan-al-zarouni.jpg'
-    },
+
     {
       name: 'Thomas Sherif',
       title: 'Founder of Fashion Factor',
@@ -41,12 +36,7 @@ const SpeakersSection = () => {
       image: '/images/speakers/maher-al-kaabi.webp',
       fallback: '/images/speakers/maher-al-kaabi.jpg'
     },
-    {
-      name: 'Adel Al Awadhi',
-      title: 'Founder of The Corporate Group',
-      image: '/images/speakers/adel-al-awadhi.webp',
-      fallback: '/images/speakers/adel-al-awadhi.jpg'
-    },
+
     {
       name: 'Dr Mohamed Alkindi',
       title: 'Former Minister Of Environment and Water, UAE',

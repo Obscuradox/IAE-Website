@@ -93,25 +93,25 @@ const ActivitiesSection = () => {
               style={{ transitionDelay: `${index * 0.1}s` }}
             >
               {/* Activity Image with WebP support */}
-              <div className="relative w-full h-32 sm:h-40 lg:h-48 xl:h-56 overflow-hidden rounded-2xl bg-[var(--color-image-bg)]">
-                <picture>
-                  <source srcSet={activity.image} type="image/webp" />
-                  <Image
-                    src={activity.fallback}
-                    alt={activity.name}
-                    fill
-                    className="object-cover transition-transform duration-300"
-                    loading="lazy"
-                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
-                  />
-                </picture>
-                
-                {/* Overlay with activity name */}
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-3 sm:p-4">
-                  <h3 className="text-white font-euclid-square font-medium leading-tight text-xs sm:text-sm lg:text-base">
-                    {activity.name}
-                  </h3>
+              <div className="flex flex-col gap-2">
+                <div className="relative w-full h-32 sm:h-40 lg:h-48 xl:h-56 overflow-hidden rounded-2xl bg-[var(--color-image-bg)]">
+                  <picture>
+                    <source srcSet={activity.image} type="image/webp" />
+                    <Image
+                      src={activity.fallback}
+                      alt={activity.name}
+                      fill
+                      className="object-cover transition-transform duration-300"
+                      loading="lazy"
+                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
+                    />
+                  </picture>
                 </div>
+                
+                {/* Activity name below image */}
+                <h3 className="text-white font-euclid-square font-medium leading-tight text-xs sm:text-sm lg:text-base">
+                  {activity.name}
+                </h3>
               </div>
             </div>
           ))}

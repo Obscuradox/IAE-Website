@@ -252,7 +252,7 @@ export default function HeroSection() {
               href="mailto:contact@infinityaengines.com?subject=Sponsorship Inquiry&body=Hi, I'm interested in becoming a sponsor for the Infinity Ængines × Fashion Factor event. Please send me the sponsorship packages and details."
               className="btn-secondary font-euclid-square text-center"
             >
-              Get Sponsor
+              View Sponsorship Packages
             </a>
           </div>
         </div>

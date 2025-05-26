@@ -78,7 +78,7 @@ const SponsorsSection = () => {
             <div className="overflow-hidden">
               <div className="flex gap-4 animate-scroll-right">
                 {duplicatedSponsors.slice(0, 12).map((sponsor, index) => (
-                  <div key={`row1-${index}`} className="flex-shrink-0 w-24 h-16">
+                  <div key={`row1-${index}`} className="flex-shrink-0 w-48 h-36">
                     <div className="relative w-full h-full flex items-center justify-center rounded-lg p-2">
                       <Image
                         src={sponsor.image}
@@ -98,7 +98,7 @@ const SponsorsSection = () => {
             <div className="overflow-hidden">
               <div className="flex gap-4 animate-scroll-left">
                 {duplicatedSponsors.slice(6, 18).map((sponsor, index) => (
-                  <div key={`row2-${index}`} className="flex-shrink-0 w-24 h-16">
+                  <div key={`row2-${index}`} className="flex-shrink-0 w-48 h-36">
                     <div className="relative w-full h-full flex items-center justify-center rounded-lg p-2">
                       <Image
                         src={sponsor.image}
@@ -121,7 +121,7 @@ const SponsorsSection = () => {
           {sponsors.map((sponsor, index) => (
             <div key={index} className="flex items-center justify-center">
               {/* Sponsor Logo with SVG optimization */}
-              <div className="relative w-full h-16 sm:h-20 lg:h-24 flex items-center justify-center rounded-lg p-2">
+              <div className="relative w-full h-36 sm:h-48 lg:h-60 flex items-center justify-center rounded-lg p-2">
                 <Image
                   src={sponsor.image}
                   alt={`${sponsor.name} logo`}

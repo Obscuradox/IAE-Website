@@ -1,4 +1,5 @@
 import HeroSection from './components/HeroSection'
+import GallerySection from './components/GallerySection'
 import SponsorsSection from './components/SponsorsSection'
 import ActivitiesSection from './components/ActivitiesSection'
 import SpeakersSection from './components/SpeakersSection'
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
+      <GallerySection />
       <SponsorsSection />
       <ActivitiesSection />
       <SpeakersSection />

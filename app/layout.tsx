@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     url: 'https://infinityaengines-fashionfactor.com',
     siteName: 'Infinity Ængines × Fashion Factor',
     title: '🚀 The Ultimate Innovation Show - Infinity Ængines × Fashion Factor | June 12-15, Dubai 🇦🇪',
-    description: '🎯 Join 2500+ participants & 250,000+ live viewers for the most innovative fashion-tech event of 2024!\n\n📅 June 12-15, 2024\n📍 The Agenda, Dubai Media City\n\n✨ What awaits you:\n• Blockchain & AI in Fashion\n• Runway Shows with 3D Metaverse\n• Expert Workshops (Web3, AR/VR, AI)\n• Innovator Pitches & Awards\n• Virtual & Physical Attendance\n• Networking with Industry Leaders\n\n🎪 Featured Speakers:\n• Brock Pierce (USDT Founder)\n• Jonny Dodge (F1 Entrepreneur)\n• Top Fashion & Tech Visionaries\n\n🎁 Free Entry | Premium Sponsor Packages Available\n\n#FashionTech #Innovation #Dubai #Blockchain #AI #Metaverse',
+    description: '🎯 Join 2500+ participants & 250,000+ live viewers for the most innovative fashion-tech event of 2024!\n\n📅 June 12-15, 2024\n📍 The Agenda, Dubai Media City\n\n✨ What awaits you:\n• Blockchain & AI in Fashion\n• Runway Shows with 3D Metaverse\n• Expert Workshops (Web3, AR/VR, AI)\n• Innovator Pitches & Awards\n• Virtual & Physical Attendance\n• Networking with Industry Leaders\n\n🎪 Featured Speakers:\n• Brock Pierce (USDT Founder)\n• Jonny Dodge (F1 Entrepreneur)\n• Top Fashion & Tech Visionaries\n\n🎁 Premium Sponsor Packages Available\n\n#FashionTech #Innovation #Dubai #Blockchain #AI #Metaverse',
     images: [
       {
         url: '/images/og-screenshot.jpg',
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     site: '@InfinityAengines',
     creator: '@InfinityAengines',
     title: '🚀 The Ultimate Innovation Show - Fashion × Tech | Dubai June 12-15',
-    description: '🎯 2500+ participants, 250K+ viewers! Fashion-tech revolution in Dubai.\n\n✨ Blockchain, AI, Metaverse, Runway Shows\n🎪 Brock Pierce, Industry Leaders\n📍 Dubai Media City\n🎁 Free Entry',
+    description: '🎯 2500+ participants, 250K+ viewers! Fashion-tech revolution in Dubai.\n\n✨ Blockchain, AI, Metaverse, Runway Shows\n🎪 Brock Pierce, Industry Leaders\n📍 Dubai Media City\n🎁 Premium Sponsor Packages Available',
     images: ['/images/og-screenshot.jpg'],
   },
   robots: {
@@ -111,7 +111,7 @@ export const metadata: Metadata = {
     'event:end_time': '2024-06-15T23:00:00+04:00',
     'event:location': 'The Agenda, Dubai Media City, UAE',
     'event:organizer': 'Infinity Ængines × Fashion Factor',
-    'event:price': 'Free',
+    'event:price': 'Paid',
     'event:category': 'Technology Conference',
     'event:type': 'Hybrid Event',
     'article:author': 'Infinity Ængines',

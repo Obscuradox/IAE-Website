@@ -103,8 +103,7 @@ const FeaturesSection = () => {
                     loading="lazy"
                   />
                 </picture>
-                {/* Dark overlay for better text readability */}
-                <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
               </div>
               
               {/* Content */}
@@ -151,8 +150,7 @@ const FeaturesSection = () => {
                     loading="lazy"
                   />
                 </picture>
-                {/* Dark overlay for better text readability */}
-                <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
               </div>
               
               {/* Content */}
@@ -235,8 +233,7 @@ const FeaturesSection = () => {
                     loading="lazy"
                   />
                 </picture>
-                {/* Dark overlay for better text readability */}
-                <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
               </div>
               
               {/* Content - positioned at top left */}
@@ -272,8 +269,7 @@ const FeaturesSection = () => {
                     loading="lazy"
                   />
                 </picture>
-                {/* Dark overlay for better text readability */}
-                <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
               </div>
               
               {/* Content - positioned at top left */}
@@ -312,8 +308,7 @@ const FeaturesSection = () => {
                     loading="lazy"
                   />
                 </picture>
-                {/* Dark overlay for better text readability */}
-                <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
               </div>
               
               {/* Content - positioned at top left */}
@@ -349,8 +344,7 @@ const FeaturesSection = () => {
                     loading="lazy"
                   />
                 </picture>
-                {/* Dark overlay for better text readability */}
-                <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+
               </div>
               
               {/* Content - positioned at top left */}
