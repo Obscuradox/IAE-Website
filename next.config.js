@@ -4,6 +4,7 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ['lucide-react'],
+    webpackBuildWorker: true,
   },
   
   // Image optimization configuration
@@ -26,8 +27,7 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   
-  // Performance optimizations
-  swcMinify: true,
+  // Performance optimizations (swcMinify is now enabled by default in Next.js 15+)
   
   // Headers for better caching and security
   async headers() {

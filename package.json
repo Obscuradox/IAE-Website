@@ -10,8 +10,8 @@
     "optimize-images": "node optimize-gallery-images.js"
   },
   "dependencies": {
-    "@tailwindcss/line-clamp": "^0.4.4",
-    "next": "14.0.0",
+    "critters": "^0.0.23",
+    "next": "^15.3.2",
     "react": "^18",
     "react-dom": "^18"
   },
