@@ -71,10 +71,10 @@ const ScheduleSection = () => {
         {/* Header - Mobile optimized */}
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-6 sm:mb-8">
           <h2 className="text-[#151412] font-euclid-square font-light leading-tight mb-3 sm:mb-4 lg:mb-0 text-h2">
-            The shedule
+            The schedule
           </h2>
           <p className="text-[#151412] font-euclid-square leading-tight opacity-50 lg:w-[393px] lg:text-right text-responsive-body">
-            For questions about the program and schedule reach out to —- contact@infinityaengines.com
+            For questions about the program and schedule reach out to — contact@infinityaengines.com
           </p>
         </div>
 

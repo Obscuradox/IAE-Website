@@ -21,8 +21,9 @@ const PackagesSection = () => {
       image: '/images/packages/elite-partner.webp',
       fallback: '/images/packages/elite-partner.jpg',
       link: '/packages/elite-partner',
-      gradient: 'from-purple-500 via-purple-600 to-purple-700',
-      highlights: ['20min Keynote Speech', '50 VIP Tickets', 'Premium 5×5m Booth', 'Celebrity Meet & Greet']
+      accentColor: 'rgba(147, 51, 234, 0.1)', // subtle purple
+      borderColor: 'rgba(147, 51, 234, 0.2)',
+      highlights: ['20-Minute Keynote Speech', '50 VIP Tickets', 'Premium 5×5m Booth', 'Celebrity Meet & Greet']
     },
     {
       title: 'Premier Partner',
@@ -32,7 +33,8 @@ const PackagesSection = () => {
       image: '/images/packages/premier-partner.webp',
       fallback: '/images/packages/premier-partner.jpg',
       link: '/packages/premier-partner',
-      gradient: 'from-yellow-500 via-yellow-600 to-yellow-700',
+      accentColor: 'rgba(245, 158, 11, 0.1)', // subtle amber
+      borderColor: 'rgba(245, 158, 11, 0.2)',
       highlights: ['15min Panel Leadership', '25 VIP Tickets', '3×3m Booth', 'Branded Mini-Activation']
     },
     {
@@ -43,7 +45,8 @@ const PackagesSection = () => {
       image: '/images/packages/core-partner.webp',
       fallback: '/images/packages/core-partner.jpg',
       link: '/packages/core-partner',
-      gradient: 'from-blue-500 via-blue-600 to-blue-700',
+      accentColor: 'rgba(59, 130, 246, 0.1)', // subtle blue
+      borderColor: 'rgba(59, 130, 246, 0.2)',
       highlights: ['5min Stage Presence', '10 VIP Tickets', '2×2m Booth', 'Social Media Campaign']
     }
   ]
@@ -176,89 +179,105 @@ const PackagesSection = () => {
               className={`relative group scroll-animate-stagger ${gridVisible ? 'animate-in' : ''}`}
               style={{ transitionDelay: `${index * 0.2}s` }}
             >
-              {/* Enhanced Package Card - Removed hover scale effect */}
-              <div className="relative w-full h-[320px] sm:h-[380px] lg:h-[420px] xl:h-[450px] overflow-hidden rounded-3xl bg-[var(--color-image-bg)] shadow-2xl">
+              {/* Neumorphic Package Card */}
+              <div 
+                className="relative w-full h-[280px] sm:h-[320px] lg:h-[360px] xl:h-[380px] overflow-hidden rounded-2xl bg-[#1a1a1a] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05),0_1px_3px_0_rgba(0,0,0,0.8),0_1px_2px_0_rgba(0,0,0,0.9)] hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_4px_12px_0_rgba(0,0,0,0.9)] transition-all duration-300 border border-gray-800"
+                style={{ 
+                  borderColor: pkg.borderColor,
+                  backgroundColor: `color-mix(in srgb, #1a1a1a 90%, ${pkg.accentColor.replace('0.1', '1')} 10%)`
+                }}
+              >
                 
-                {/* Background Image */}
-                <picture>
-                  <source srcSet={pkg.image} type="image/webp" />
-                  <Image
-                    src={pkg.fallback}
-                    alt={pkg.title}
-                    fill
-                    className="object-cover"
-                    loading="lazy"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                </picture>
+                {/* Background Image with reduced opacity */}
+                <div className="absolute inset-0 opacity-20">
+                  <picture>
+                    <source srcSet={pkg.image} type="image/webp" />
+                    <Image
+                      src={pkg.fallback}
+                      alt={pkg.title}
+                      fill
+                      className="object-cover"
+                      loading="lazy"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </picture>
+                </div>
                 
-                {/* Gradient Overlay matching package colors */}
-                <div className={`absolute inset-0 bg-gradient-to-t ${pkg.gradient} opacity-80 z-10`}></div>
+                {/* Subtle accent overlay */}
+                <div 
+                  className="absolute inset-0 z-5"
+                  style={{ backgroundColor: pkg.accentColor }}
+                ></div>
                 
-                {/* Content Container - Mobile optimized spacing */}
-                <div className="absolute inset-0 z-20 flex flex-col justify-between p-4 sm:p-5 lg:p-6">
+                {/* Content Container - Reduced spacing */}
+                <div className="absolute inset-0 z-20 flex flex-col p-4 sm:p-5 lg:p-6">
                   
-                  {/* Top Section - Price Badge */}
-                  <div className="flex justify-end">
-                    <div className="bg-white/20 backdrop-blur-sm rounded-full px-2.5 py-1 sm:px-3 sm:py-1.5 border border-white/30">
-                      <span className="text-white font-bold text-xs sm:text-sm lg:text-base">
-                        {pkg.price}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Bottom Section - Main Content - Mobile compressed */}
-                  <div className="space-y-2 sm:space-y-3">
-                    {/* Package Title and Subtitle */}
-                    <div className="space-y-1">
-                      <div className="text-white/80 text-xs font-medium uppercase tracking-wider">
-                        {pkg.subtitle}
+                  {/* Top Section - Price Badge and Title */}
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="flex items-start justify-between">
+                      <div className="space-y-1">
+                        <div className="text-gray-400 text-xs font-medium uppercase tracking-wider">
+                          {pkg.subtitle}
+                        </div>
+                        <h3 className="text-white font-euclid-square font-bold text-lg sm:text-xl lg:text-2xl leading-tight">
+                          {pkg.title}
+                        </h3>
                       </div>
-                      <h3 className="text-white font-euclid-square font-bold text-lg sm:text-xl lg:text-2xl xl:text-3xl leading-tight">
-                        {pkg.title}
-                      </h3>
+                      <div 
+                        className="bg-[#2a2a2a] rounded-xl px-3 py-1.5 sm:px-4 sm:py-2 shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.6),inset_0_-1px_0_0_rgba(255,255,255,0.1)] border border-gray-700"
+                        style={{ borderColor: pkg.borderColor }}
+                      >
+                        <span className="text-white font-bold text-xs sm:text-sm">
+                          {pkg.price}
+                        </span>
+                      </div>
                     </div>
 
                     {/* Description */}
-                    <p className="text-white/90 text-xs sm:text-sm lg:text-base leading-relaxed line-clamp-2">
+                    <p className="text-gray-300 text-xs sm:text-sm leading-relaxed line-clamp-2">
                       {pkg.description}
                     </p>
 
-                    {/* Key Highlights - Mobile compressed */}
-                    <div className="space-y-1">
-                      <div className="text-white/80 text-xs font-medium uppercase tracking-wider">
+                    {/* Key Highlights */}
+                    <div className="space-y-2">
+                      <div className="text-gray-400 text-xs font-medium uppercase tracking-wider">
                         Key Features
                       </div>
                       <div className="grid grid-cols-2 gap-1">
                         {pkg.highlights.map((highlight, idx) => (
-                          <div key={idx} className="flex items-center space-x-1">
-                            <div className="w-1 h-1 bg-white rounded-full"></div>
-                            <span className="text-white text-xs lg:text-sm font-medium">
+                          <div key={idx} className="flex items-center space-x-1.5">
+                            <div 
+                              className="w-1.5 h-1.5 rounded-full"
+                              style={{ backgroundColor: pkg.borderColor.replace('0.2', '0.8') }}
+                            ></div>
+                            <span className="text-gray-300 text-xs font-medium">
                               {highlight}
                             </span>
                           </div>
                         ))}
                       </div>
                     </div>
+                  </div>
 
-                    {/* CTA Button - White background with black text for visibility */}
+                  {/* Bottom Section - CTA Button */}
+                  <div className="mt-auto pt-4">
                     {pkg.link.startsWith('/') ? (
                       <Link 
                         href={pkg.link}
-                        className="inline-flex items-center justify-center w-full bg-white text-black font-euclid-square font-bold py-2 px-4 sm:py-2.5 sm:px-5 lg:py-3 lg:px-6 rounded-xl hover:bg-gray-100 transition-colors duration-300 shadow-lg text-xs sm:text-sm lg:text-base"
+                        className="inline-flex items-center justify-center w-full bg-white text-black font-euclid-square font-medium py-2.5 px-4 sm:py-3 sm:px-5 rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-[0_2px_8px_0_rgba(255,255,255,0.15)] hover:shadow-[0_4px_12px_0_rgba(255,255,255,0.2)] text-xs sm:text-sm"
                       >
                         <span>Explore Package</span>
-                        <svg className="w-3 h-3 ml-1.5 sm:ml-2 transition-transform hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-3 h-3 ml-2 transition-transform hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </Link>
                     ) : (
                       <a 
                         href={pkg.link}
-                        className="inline-flex items-center justify-center w-full bg-white text-black font-euclid-square font-bold py-2 px-4 sm:py-2.5 sm:px-5 lg:py-3 lg:px-6 rounded-xl hover:bg-gray-100 transition-colors duration-300 shadow-lg text-xs sm:text-sm lg:text-base"
+                        className="inline-flex items-center justify-center w-full bg-white text-black font-euclid-square font-medium py-2.5 px-4 sm:py-3 sm:px-5 rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-[0_2px_8px_0_rgba(255,255,255,0.15)] hover:shadow-[0_4px_12px_0_rgba(255,255,255,0.2)] text-xs sm:text-sm"
                       >
                         <span>Explore Package</span>
-                        <svg className="w-3 h-3 ml-1.5 sm:ml-2 transition-transform hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-3 h-3 ml-2 transition-transform hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </a>
@@ -266,36 +285,44 @@ const PackagesSection = () => {
                   </div>
                 </div>
 
-                {/* Decorative Elements - Mobile adjusted */}
-                <div className="absolute top-2 left-2 sm:top-3 sm:left-3 w-1 h-6 sm:w-1.5 sm:h-8 lg:h-10 bg-white/30 rounded-full z-30"></div>
-                <div className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 w-3 h-3 sm:w-4 sm:h-4 bg-white/20 rounded-full z-30"></div>
+                {/* Subtle decorative elements */}
+                <div 
+                  className="absolute top-3 left-3 w-1 h-8 rounded-full z-30 opacity-30"
+                  style={{ backgroundColor: pkg.borderColor.replace('0.2', '0.6') }}
+                ></div>
+                <div 
+                  className="absolute bottom-3 right-3 w-3 h-3 rounded-full z-30 opacity-20"
+                  style={{ backgroundColor: pkg.borderColor.replace('0.2', '0.4') }}
+                ></div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Call-to-Action Cards Section */}
+        {/* Call-to-Action Cards Section - Neumorphic Design */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-12 sm:mt-16 lg:mt-20">
           
           {/* General Sponsorship Inquiry Card */}
-          <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-6 sm:p-8 lg:p-10 border border-gray-700 shadow-2xl">
-            <div className="text-center space-y-4 sm:space-y-6">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-white font-euclid-square font-bold text-xl sm:text-2xl lg:text-3xl mb-3">
+          <div className="bg-[#1a1a1a] rounded-2xl p-6 sm:p-7 lg:p-8 border border-gray-800 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05),0_1px_3px_0_rgba(0,0,0,0.8),0_1px_2px_0_rgba(0,0,0,0.9)] hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_4px_12px_0_rgba(0,0,0,0.9)] transition-all duration-300">
+            <div className="space-y-4 sm:space-y-5">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#2a2a2a] rounded-xl flex items-center justify-center shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.6),inset_0_-1px_0_0_rgba(255,255,255,0.1)] border border-gray-700">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                </div>
+                <h3 className="text-white font-euclid-square font-bold text-lg sm:text-xl lg:text-2xl">
                   Custom Sponsorship
                 </h3>
-                <p className="text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed">
-                  Need a tailored sponsorship solution? Let's discuss a custom package that perfectly fits your brand's goals and budget.
-                </p>
               </div>
+              
+              <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
+                Need a tailored sponsorship solution? Let's discuss a custom package that perfectly fits your brand's goals and budget.
+              </p>
+              
               <a 
                 href="mailto:contact@infinityaengines.com?subject=Custom Sponsorship Inquiry&body=Hi, I'm interested in discussing a custom sponsorship package for the Infinity Ængines × Fashion Factor event. Please contact me to explore tailored options."
-                className="inline-flex items-center justify-center bg-white text-black font-euclid-square font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-xl hover:bg-gray-100 transition-colors duration-300 shadow-lg text-sm sm:text-base"
+                className="inline-flex items-center justify-center w-full bg-white text-black font-euclid-square font-medium py-3 px-5 sm:py-3.5 sm:px-6 rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-[0_2px_8px_0_rgba(255,255,255,0.15)] hover:shadow-[0_4px_12px_0_rgba(255,255,255,0.2)] text-sm sm:text-base"
               >
                 <span>Discuss Custom Package</span>
                 <svg className="w-4 h-4 ml-2 transition-transform hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -306,24 +333,26 @@ const PackagesSection = () => {
           </div>
 
           {/* Event Information Card */}
-          <div className="bg-gradient-to-br from-blue-900 to-purple-900 rounded-3xl p-6 sm:p-8 lg:p-10 border border-blue-700 shadow-2xl">
-            <div className="text-center space-y-4 sm:space-y-6">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-white font-euclid-square font-bold text-xl sm:text-2xl lg:text-3xl mb-3">
+          <div className="bg-[#1a1a1a] rounded-2xl p-6 sm:p-7 lg:p-8 border border-gray-800 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05),0_1px_3px_0_rgba(0,0,0,0.8),0_1px_2px_0_rgba(0,0,0,0.9)] hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_4px_12px_0_rgba(0,0,0,0.9)] transition-all duration-300">
+            <div className="space-y-4 sm:space-y-5">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#2a2a2a] rounded-xl flex items-center justify-center shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.6),inset_0_-1px_0_0_rgba(255,255,255,0.1)] border border-gray-700">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-white font-euclid-square font-bold text-lg sm:text-xl lg:text-2xl">
                   Event Details
                 </h3>
-                <p className="text-blue-100 text-sm sm:text-base lg:text-lg leading-relaxed">
-                  Get comprehensive event information, venue details, audience demographics, and partnership benefits guide.
-                </p>
               </div>
+              
+              <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
+                Get comprehensive event information, venue details, audience demographics, and partnership benefits guide.
+              </p>
+              
               <a 
                 href="mailto:contact@infinityaengines.com?subject=Event Information Request&body=Hi, I would like to receive detailed information about the Infinity Ængines × Fashion Factor event, including venue details, audience demographics, and partnership opportunities."
-                className="inline-flex items-center justify-center bg-white text-black font-euclid-square font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-xl hover:bg-gray-100 transition-colors duration-300 shadow-lg text-sm sm:text-base"
+                className="inline-flex items-center justify-center w-full bg-white text-black font-euclid-square font-medium py-3 px-5 sm:py-3.5 sm:px-6 rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-[0_2px_8px_0_rgba(255,255,255,0.15)] hover:shadow-[0_4px_12px_0_rgba(255,255,255,0.2)] text-sm sm:text-base"
               >
                 <span>Get Event Info</span>
                 <svg className="w-4 h-4 ml-2 transition-transform hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -128,7 +128,7 @@ export default function StagePresenterPage() {
                 <div className="space-y-4">
                   <div className="border-b border-gray-700 pb-4">
                     <h4 className="text-lg font-semibold text-white mb-2">
-                      3 VIP Ticket
+                      3 VIP Tickets
                     </h4>
                     <p className="text-gray-400 text-sm lg:text-base">
                       Access to VIP areas with priority seating
@@ -168,10 +168,10 @@ export default function StagePresenterPage() {
                   </div>
                   <div className="pb-4">
                     <h4 className="text-lg font-semibold text-white mb-2">
-                      Metaverse Access: 1-month access to our Spaceship hub for virtual networking.
+                      Metaverse Access
                     </h4>
                     <p className="text-gray-400 text-sm lg:text-base">
-                      Metaverse Access: 1-month access to our Spaceship hub for virtual networking.
+                      1-month access to our Spaceship hub for virtual networking.
                     </p>
                   </div>
                 </div>
