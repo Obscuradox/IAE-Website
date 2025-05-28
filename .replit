@@ -3,10 +3,11 @@ modules = ["nodejs-20"]
 run = "node .next/standalone/server.js"
 
 [deployment]
-run = "node .next/standalone/server.js"
+run = ["sh", "-c", "npm start"]
 buildCommand = "npm run build"
 deploymentTarget = "gce"
 ignoreRules = []
+build = ["sh", "-c", "npm run build"]
 
 [workflows]
 runButton = "Run"
@@ -18,7 +19,7 @@ mode = "sequential"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "node .next/standalone/server.js"
+args = "npm start"
 
 [[ports]]
 localPort = 3000
