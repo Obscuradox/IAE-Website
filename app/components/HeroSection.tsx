@@ -170,7 +170,7 @@ export default function HeroSection() {
               <div className="bg-white text-black px-8 py-6 sm:px-12 sm:py-8 lg:px-16 lg:py-10 flex items-center justify-center min-w-[200px] sm:min-w-[300px] lg:min-w-[400px]">
                 <div className="text-center">
                   <div className="font-euclid-square font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl">
-                    June 12-15
+                    June 13-15
                   </div>
                 </div>
               </div>
@@ -243,10 +243,15 @@ export default function HeroSection() {
           {/* Buttons with Email Links - Mobile optimized with proper touch targets */}
           <div className="flex flex-col w-full gap-3 mb-8 px-2 sm:flex-row sm:gap-4 sm:w-auto sm:mb-12 sm:px-0">
             <a 
-              href="mailto:contact@infinityaengines.com?subject=Ticket Inquiry&body=Hi, I'm interested in getting tickets for the Infinity Ængines × Fashion Factor event. Please provide more information."
-              className="btn-primary font-euclid-square text-center flex-shrink-0"
+              href="https://lu.ma/q7jwgx15"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary font-euclid-square text-center flex-shrink-0 inline-flex items-center justify-center"
             >
-              Buy Tickets
+              <span>Reserve Your Spot!</span>
+              <svg className="w-4 h-4 ml-2 transition-transform hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </a>
             <a 
               href="mailto:contact@infinityaengines.com?subject=Sponsorship Inquiry&body=Hi, I'm interested in becoming a sponsor for the Infinity Ængines × Fashion Factor event. Please send me the sponsorship packages and details."

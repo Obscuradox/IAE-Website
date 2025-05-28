@@ -9,8 +9,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Infinity Ængines × Fashion Factor - The Ultimate Innovation Show | June 12-15, Dubai',
-  description: 'Join the ultimate innovation show featuring blockchain pioneers, fashion leaders, and tech visionaries. June 12-15 at The Agenda, Dubai Media City. 250,000+ live stream viewers, 2500+ participants. Experience cutting-edge fashion tech, AI workshops, runway shows, and metaverse integration.',
+  title: 'Infinity Ængines × Fashion Factor - The Ultimate Innovation Show | June 13-15, Dubai',
+  description: 'Join the ultimate innovation show featuring blockchain pioneers, fashion leaders, and tech visionaries. June 13-15 at The Agenda, Dubai Media City. 250,000+ live stream viewers, 2500+ participants. Experience cutting-edge fashion tech, AI workshops, runway shows, and metaverse integration.',
   keywords: [
     'innovation show',
     'blockchain conference',
@@ -59,8 +59,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://infinityaengines-fashionfactor.com',
     siteName: 'Infinity Ængines × Fashion Factor',
-    title: '🚀 The Ultimate Innovation Show - Infinity Ængines × Fashion Factor | June 12-15, Dubai 🇦🇪',
-    description: '🎯 Join 2500+ participants & 250,000+ live viewers for the most innovative fashion-tech event of 2024!\n\n📅 June 12-15, 2024\n📍 The Agenda, Dubai Media City\n\n✨ What awaits you:\n• Blockchain & AI in Fashion\n• Runway Shows with 3D Metaverse\n• Expert Workshops (Web3, AR/VR, AI)\n• Innovator Pitches & Awards\n• Virtual & Physical Attendance\n• Networking with Industry Leaders\n\n🎪 Featured Speakers:\n• Brock Pierce (USDT Founder)\n• Jonny Dodge (F1 Entrepreneur)\n• Top Fashion & Tech Visionaries\n\n🎁 Premium Sponsor Packages Available\n\n#FashionTech #Innovation #Dubai #Blockchain #AI #Metaverse',
+    title: '🚀 The Ultimate Innovation Show - Infinity Ængines × Fashion Factor | June 13-15, Dubai 🇦🇪',
+    description: '🎯 Join 2500+ participants & 250,000+ live viewers for the most innovative fashion-tech event of 2024!\n\n📅 June 13-15, 2024\n📍 The Agenda, Dubai Media City\n\n✨ What awaits you:\n• Blockchain & AI in Fashion\n• Runway Shows with 3D Metaverse\n• Expert Workshops (Web3, AR/VR, AI)\n• Innovator Pitches & Awards\n• Virtual & Physical Attendance\n• Networking with Industry Leaders\n\n🎪 Featured Speakers:\n• Brock Pierce (USDT Founder)\n• Jonny Depp (Actor & Entrepreneur)\n• Vitalik Buterin (Ethereum Creator)\n• Anna Wintour (Vogue Editor)\n\n🎟️ Limited spots available - Register now!',
     images: [
       {
         url: '/images/og-screenshot.jpg',
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@InfinityAengines',
     creator: '@InfinityAengines',
-    title: '🚀 The Ultimate Innovation Show - Fashion × Tech | Dubai June 12-15',
+    title: '🚀 The Ultimate Innovation Show - Fashion × Tech | Dubai June 13-15',
     description: '🎯 2500+ participants, 250K+ viewers! Fashion-tech revolution in Dubai.\n\n✨ Blockchain, AI, Metaverse, Runway Shows\n🎪 Brock Pierce, Industry Leaders\n📍 Dubai Media City\n🎁 Premium Sponsor Packages Available',
     images: ['/images/og-screenshot.jpg'],
   },
@@ -107,7 +107,7 @@ export const metadata: Metadata = {
   category: 'technology',
   classification: 'Business Conference',
   other: {
-    'event:start_time': '2024-06-12T09:00:00+04:00',
+    'event:start_time': '2024-06-13T09:00:00+04:00',
     'event:end_time': '2024-06-15T23:00:00+04:00',
     'event:location': 'The Agenda, Dubai Media City, UAE',
     'event:organizer': 'Infinity Ængines × Fashion Factor',
@@ -153,7 +153,7 @@ export default function RootLayout({
         <meta name="ICBM" content="25.2048, 55.2708" />
         
         {/* Event-specific meta tags */}
-        <meta name="event-date" content="2024-06-12" />
+        <meta name="event-date" content="2024-06-13" />
         <meta name="event-location" content="Dubai Media City, UAE" />
         <meta name="event-type" content="Technology Conference" />
         <meta name="event-price" content="Free" />
@@ -185,7 +185,7 @@ export default function RootLayout({
               "@type": "Event",
               "name": "Infinity Ængines × Fashion Factor - The Ultimate Innovation Show",
               "description": "Join the ultimate innovation show featuring blockchain pioneers, fashion leaders, and tech visionaries. Experience cutting-edge fashion tech, AI workshops, runway shows, and metaverse integration.",
-              "startDate": "2024-06-12T09:00:00+04:00",
+              "startDate": "2024-06-13T09:00:00+04:00",
               "endDate": "2024-06-15T23:00:00+04:00",
               "eventStatus": "https://schema.org/EventScheduled",
               "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",

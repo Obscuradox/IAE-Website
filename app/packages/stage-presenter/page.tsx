@@ -181,9 +181,12 @@ export default function StagePresenterPage() {
               <div className="mt-12">
                 <a 
                   href="mailto:contact@infinityaengines.com?subject=Stage Presenter Package Application&body=Hi, I'm interested in applying for the Stage Presenter Package for the Infinity Ængines × Fashion Factor event. Please find my pitch attached and let me know the next steps."
-                  className="btn-primary font-euclid-square text-center inline-block"
+                  className="btn-primary font-euclid-square text-center inline-flex items-center justify-center"
                 >
-                  Apply for Stage Presenter Package
+                  <span>Reserve Your Spot!</span>
+                  <svg className="w-4 h-4 ml-2 transition-transform hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </a>
               </div>
             </div>

@@ -134,10 +134,10 @@ const PackagesSection = () => {
                       { icon: '📸', title: 'Influencer Shoot', desc: '1B+ reach potential' },
                       { icon: '🚀', title: 'Metaverse Access', desc: '1-month networking' }
                     ].map((benefit, idx) => (
-                      <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 lg:p-5 border border-white/20">
+                      <div key={idx} className="bg-white text-black rounded-lg p-3 sm:p-4 lg:p-5 border border-gray-200">
                         <div className="text-lg sm:text-xl lg:text-2xl mb-1">{benefit.icon}</div>
-                        <div className="text-white font-bold text-xs sm:text-sm lg:text-base">{benefit.title}</div>
-                        <div className="text-white/80 text-xs sm:text-xs lg:text-sm">{benefit.desc}</div>
+                        <div className="text-black font-bold text-xs sm:text-sm lg:text-base">{benefit.title}</div>
+                        <div className="text-black/70 text-xs sm:text-xs lg:text-sm">{benefit.desc}</div>
                       </div>
                     ))}
                   </div>

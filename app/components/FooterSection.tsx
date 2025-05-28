@@ -1,9 +1,13 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
+import Modal from './Modal'
 
 const FooterSection = () => {
+  const [showTerms, setShowTerms] = useState(false)
+  const [showPrivacy, setShowPrivacy] = useState(false)
+
   // X separator component
   const XSeparator = () => (
     <svg className="w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,252 +53,317 @@ const FooterSection = () => {
   )
 
   return (
-    <footer className="bg-gradient-to-b from-[#0D0D14] to-[#1A1A1A] py-12 sm:py-16 lg:py-20">
-      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-[248px]">
-        
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-12">
+    <>
+      <footer className="bg-[#151412] text-[#FDF6E8] py-8 sm:py-12 lg:py-16">
+        <div className="max-w-sm mx-auto px-4 sm:max-w-2xl sm:px-6 lg:max-w-7xl lg:px-8">
           
-          {/* Left Column - Branding & Event Info */}
-          <div className="lg:col-span-5">
-            {/* Combined Logos */}
-            <div className="flex items-center justify-center lg:justify-start gap-3 lg:gap-[14px] mb-6">
-              <div className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-[100px] lg:h-[100px] flex items-center justify-center">
-                <Image
-                  src="/images/infinity-aengines-logo.png"
-                  alt="Infinity Aengines"
-                  width={100}
-                  height={100}
-                  className="object-contain"
-                />
-              </div>
-              
-              <div className="flex items-center justify-center h-16 sm:h-20 lg:h-[100px]">
-                <XSeparator />
-              </div>
-              
-              <div className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-[100px] lg:h-[100px] flex items-center justify-center">
-                <Image
-                  src="/images/fashion-factor-logo.svg"
-                  alt="Fashion Factor"
-                  width={100}
-                  height={100}
-                  className="object-contain"
-                />
-              </div>
-            </div>
-
-            {/* Event Information */}
-            <div className="text-center lg:text-left mb-8">
-              <h3 className="text-white font-euclid-square text-xl lg:text-2xl font-bold mb-4">
-                The Ultimate Innovation Show
-              </h3>
-              <div className="space-y-2 text-[#FDF6E8]/80">
-                <p className="font-euclid-square text-base lg:text-lg">
-                  📅 June 12-15, 2024 | 11am daily
+          {/* Main Footer Content */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8 sm:mb-12">
+            
+            {/* Logo and Event Info */}
+            <div className="sm:col-span-2 lg:col-span-1">
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <Image 
+                    src="/images/infinity-aengines-logo.png" 
+                    alt="Infinity Aengines Logo" 
+                    width={40} 
+                    height={80}
+                    className="object-contain"
+                  />
+                  <span className="text-[#FDF6E8] text-lg">×</span>
+                  <Image 
+                    src="/images/fashion-factor-logo.svg" 
+                    alt="Fashion Factor Logo" 
+                    width={35} 
+                    height={70}
+                    className="object-contain"
+                  />
+                </div>
+                <h3 className="text-[#FDF6E8] font-euclid-square font-bold text-lg lg:text-xl mb-2">
+                  The Ultimate Innovation Show
+                </h3>
+                <p className="text-[#FDF6E8]/80 font-euclid-square text-sm lg:text-base">
+                  📅 June 13-15, 2024 | 11am daily
                 </p>
-                <p className="font-euclid-square text-sm lg:text-base leading-relaxed">
-                  📍 Abdullah Omran Taryam St - corner Al Jaddi St<br />
-                  Dubai Media City - Dubai
-                </p>
-                <p className="font-euclid-square text-sm lg:text-base">
-                  👥 2,500+ Participants | 📺 250,000+ Live Viewers
+                <p className="text-[#FDF6E8]/80 font-euclid-square text-sm lg:text-base">
+                  📍 The Agenda, Dubai Media City
                 </p>
               </div>
             </div>
 
-            {/* Social Media Links */}
-            <div className="text-center lg:text-left">
-              <h4 className="text-white font-euclid-square text-lg font-semibold mb-4">
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-[#FDF6E8] font-euclid-square font-bold text-base lg:text-lg mb-4">
+                Quick Links
+              </h4>
+              <ul className="space-y-2">
+                <li>
+                  <a 
+                    href="https://lu.ma/q7jwgx15"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
+                  >
+                    🎫 Tickets
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://lu.ma/q7jwgx15"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
+                  >
+                    🤝 Sponsorship
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://lu.ma/q7jwgx15"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
+                  >
+                    🎤 Speaking Opportunities
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://lu.ma/q7jwgx15"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
+                  >
+                    📋 Event Information
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div>
+              <h4 className="text-[#FDF6E8] font-euclid-square font-bold text-base lg:text-lg mb-4">
+                Contact
+              </h4>
+              <ul className="space-y-2">
+                <li>
+                  <a 
+                    href="mailto:contact@infinityaengines.com"
+                    className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
+                  >
+                    📧 contact@infinityaengines.com
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="tel:+971503379182"
+                    className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
+                  >
+                    📞 +971 50 337 9182
+                  </a>
+                </li>
+                <li>
+                  <span className="block text-[#FDF6E8]/80 font-euclid-square text-sm lg:text-base">
+                    📍 Dubai Media City, UAE
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Social & Legal */}
+            <div>
+              <h4 className="text-[#FDF6E8] font-euclid-square font-bold text-base lg:text-lg mb-4">
+                Connect
+              </h4>
+              <ul className="space-y-2">
+                <li>
+                  <a 
+                    href="https://explore.unyted.world/scene?id=4a6eefc0-3b92-11f0-bc79-02243b6f7d63"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
+                  >
+                    🌐 Metaverse Experience
+                  </a>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => setShowTerms(true)}
+                    className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base text-left"
+                  >
+                    📄 Terms of Service
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => setShowPrivacy(true)}
+                    className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base text-left"
+                  >
+                    🔒 Privacy Policy
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Social Media Links */}
+          <div className="border-t border-[#FDF6E8]/20 pt-6 sm:pt-8 mb-6 sm:mb-8">
+            <div className="text-center">
+              <h4 className="text-[#FDF6E8] font-euclid-square font-bold text-base lg:text-lg mb-4">
                 Follow Us
               </h4>
-              <div className="flex justify-center lg:justify-start gap-4">
+              <div className="flex justify-center items-center gap-6">
                 <a 
-                  href="https://instagram.com/infinityaengines" 
-                  target="_blank" 
+                  href="https://www.instagram.com/infinityaengines/"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#FDF6E8]/70 hover:text-white transition-colors duration-300 hover:scale-110 transform"
+                  className="text-[#FDF6E8]/80 hover:text-white transition-colors duration-300"
                   aria-label="Follow us on Instagram"
                 >
                   <InstagramIcon />
                 </a>
                 <a 
-                  href="https://twitter.com/infinityaengines" 
-                  target="_blank" 
+                  href="https://www.linkedin.com/company/infinity-aengines/?viewAsMember=true"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#FDF6E8]/70 hover:text-white transition-colors duration-300 hover:scale-110 transform"
-                  aria-label="Follow us on Twitter"
-                >
-                  <TwitterIcon />
-                </a>
-                <a 
-                  href="https://linkedin.com/company/infinityaengines" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[#FDF6E8]/70 hover:text-white transition-colors duration-300 hover:scale-110 transform"
-                  aria-label="Connect with us on LinkedIn"
+                  className="text-[#FDF6E8]/80 hover:text-white transition-colors duration-300"
+                  aria-label="Follow us on LinkedIn"
                 >
                   <LinkedInIcon />
                 </a>
                 <a 
-                  href="https://t.me/infinityaengines" 
-                  target="_blank" 
+                  href="https://x.com/IAengines"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#FDF6E8]/70 hover:text-white transition-colors duration-300 hover:scale-110 transform"
-                  aria-label="Join our Telegram"
+                  className="text-[#FDF6E8]/80 hover:text-white transition-colors duration-300"
+                  aria-label="Follow us on X (Twitter)"
                 >
-                  <TelegramIcon />
-                </a>
-                <a 
-                  href="https://youtube.com/@infinityaengines" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[#FDF6E8]/70 hover:text-white transition-colors duration-300 hover:scale-110 transform"
-                  aria-label="Subscribe to our YouTube"
-                >
-                  <YouTubeIcon />
-                </a>
-                <a 
-                  href="https://tiktok.com/@infinityaengines" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[#FDF6E8]/70 hover:text-white transition-colors duration-300 hover:scale-110 transform"
-                  aria-label="Follow us on TikTok"
-                >
-                  <TikTokIcon />
+                  <TwitterIcon />
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Right Columns - Navigation */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
-            
-            {/* Contact Section */}
-            <div className="text-center sm:text-left">
-              <h3 className="text-white font-euclid-square text-lg font-semibold mb-6">
-                Contact
-              </h3>
-              <div className="space-y-4">
-                <a 
-                  href="mailto:contact@infinityaengines.com?subject=General Inquiry&body=Hi, I have a question about the Infinity Ængines × Fashion Factor event."
-                  className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
-                >
-                  📧 Email Us
-                </a>
-                <a 
-                  href="mailto:contact@infinityaengines.com?subject=WhatsApp Contact Request&body=Hi, I would like to connect via WhatsApp regarding the event."
-                  className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
-                >
-                  💬 WhatsApp
-                </a>
-                <a 
-                  href="mailto:contact@infinityaengines.com?subject=Resources Request&body=Hi, I would like to access resources related to the event."
-                  className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
-                >
-                  📚 Resources
-                </a>
-                <a 
-                  href="mailto:contact@infinityaengines.com?subject=Press Inquiry&body=Hi, I'm from the media and would like to cover the event."
-                  className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
-                >
-                  📰 Press
-                </a>
-              </div>
-            </div>
-
-            {/* Partners Section */}
-            <div className="text-center sm:text-left">
-              <h3 className="text-white font-euclid-square text-lg font-semibold mb-6">
-                Partners
-              </h3>
-              <div className="space-y-4">
-                <a 
-                  href="mailto:contact@infinityaengines.com?subject=Partnership Inquiry&body=Hi, I'm interested in becoming a partner for the Infinity Ængines × Fashion Factor event. Please send me partnership details."
-                  className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
-                >
-                  🤝 Become a Partner
-                </a>
-                <a 
-                  href="mailto:contact@infinityaengines.com?subject=Sponsorship Inquiry&body=Hi, I'm interested in sponsorship opportunities for the event."
-                  className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
-                >
-                  💼 Sponsorship
-                </a>
-                <a 
-                  href="mailto:contact@infinityaengines.com?subject=Location Information&body=Hi, I would like more information about the event locations."
-                  className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
-                >
-                  📍 Locations
-                </a>
-                <a 
-                  href="mailto:contact@infinityaengines.com?subject=Speaking Opportunity&body=Hi, I'm interested in speaking at the event."
-                  className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
-                >
-                  🎤 Speak
-                </a>
-              </div>
-            </div>
-
-            {/* Legal & Info Section */}
-            <div className="text-center sm:text-left">
-              <h3 className="text-white font-euclid-square text-lg font-semibold mb-6">
-                Information
-              </h3>
-              <div className="space-y-4">
-                <a 
-                  href="mailto:contact@infinityaengines.com?subject=Ticket Purchase Inquiry&body=Hi, I would like to purchase tickets for the Infinity Ængines × Fashion Factor event."
-                  className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
-                >
-                  🎫 Tickets
-                </a>
-                <a 
-                  href="mailto:contact@infinityaengines.com?subject=Terms of Service Request&body=Hi, I would like to review the Terms of Service for the event."
-                  className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
-                >
-                  📋 Terms of Service
-                </a>
-                <a 
-                  href="mailto:contact@infinityaengines.com?subject=Privacy Policy Request&body=Hi, I would like to review the Privacy Policy for the event."
-                  className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
-                >
-                  🔒 Privacy Policy
-                </a>
-                <a 
-                  href="mailto:contact@infinityaengines.com?subject=Event Schedule Request&body=Hi, I would like to see the detailed event schedule."
-                  className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
-                >
-                  📅 Schedule
-                </a>
-              </div>
+          {/* Company Information */}
+          <div className="border-t border-[#FDF6E8]/20 pt-6 sm:pt-8">
+            <div className="text-center mb-4">
+              <p className="text-[#FDF6E8]/60 font-euclid-square text-sm lg:text-base">
+                Brought to you by
+              </p>
+              <p className="text-[#FDF6E8] font-euclid-square font-bold text-base lg:text-lg">
+                FUTURE AND HAPPINESS EVENTS ORGANIZING LLC
+              </p>
+              <p className="text-[#FDF6E8]/60 font-euclid-square text-xs lg:text-sm">
+                Registered in Dubai Mainland
+              </p>
             </div>
           </div>
-        </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-white/20 pt-8">
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
-            <div className="text-center lg:text-left">
-              <p className="text-[#FDF6E8]/60 font-euclid-square text-sm">
-                © 2024 Infinity Ængines LLC. All rights reserved.
-              </p>
-              <p className="text-[#FDF6E8]/60 font-euclid-square text-xs mt-1">
-                Empowering innovation through fashion and technology
-              </p>
-            </div>
-            
-            <div className="text-center lg:text-right">
-              <p className="text-[#FDF6E8]/60 font-euclid-square text-sm">
-                Made with ❤️ in Dubai
-              </p>
-              <p className="text-[#FDF6E8]/60 font-euclid-square text-xs mt-1">
-                Building the future of fashion technology
+          {/* Bottom Copyright */}
+          <div className="border-t border-[#FDF6E8]/20 pt-6 sm:pt-8">
+            <div className="text-center">
+              <p className="text-[#FDF6E8]/60 font-euclid-square text-xs lg:text-sm">
+                © 2024 Infinity Ængines × Fashion Factor. All rights reserved.
               </p>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+
+      {/* Terms of Service Modal */}
+      <Modal
+        isOpen={showTerms}
+        onClose={() => setShowTerms(false)}
+        title="Terms of Service"
+      >
+        <div className="prose prose-sm max-w-none text-gray-700">
+          <h3 className="text-lg font-bold mb-4">1. Event Participation</h3>
+          <p className="mb-4">
+            By purchasing tickets or participating in the Infinity Ængines × Fashion Factor event, you agree to comply with all event rules, regulations, and guidelines as established by the organizers.
+          </p>
+
+          <h3 className="text-lg font-bold mb-4">2. Ticket Terms</h3>
+          <p className="mb-4">
+            All ticket sales are final. Tickets are non-refundable and non-transferable unless explicitly stated otherwise. Event schedules, speakers, and activities are subject to change without notice.
+          </p>
+
+          <h3 className="text-lg font-bold mb-4">3. Code of Conduct</h3>
+          <p className="mb-4">
+            All attendees must maintain professional conduct throughout the event. Harassment, discrimination, or disruptive behavior will result in immediate removal from the event without refund.
+          </p>
+
+          <h3 className="text-lg font-bold mb-4">4. Intellectual Property</h3>
+          <p className="mb-4">
+            All content, presentations, and materials shared during the event are protected by intellectual property rights. Recording, reproduction, or distribution without explicit permission is prohibited.
+          </p>
+
+          <h3 className="text-lg font-bold mb-4">5. Liability</h3>
+          <p className="mb-4">
+            Future and Happiness Events Organizing LLC and event organizers are not liable for any personal injury, loss, or damage that may occur during the event. Attendees participate at their own risk.
+          </p>
+
+          <h3 className="text-lg font-bold mb-4">6. Photography and Media</h3>
+          <p className="mb-4">
+            By attending the event, you consent to being photographed, filmed, or recorded for promotional and marketing purposes. These materials may be used across various media channels.
+          </p>
+
+          <h3 className="text-lg font-bold mb-4">7. Force Majeure</h3>
+          <p className="mb-4">
+            The organizers reserve the right to cancel, postpone, or modify the event due to circumstances beyond their control, including but not limited to natural disasters, government regulations, or public health emergencies.
+          </p>
+        </div>
+      </Modal>
+
+      {/* Privacy Policy Modal */}
+      <Modal
+        isOpen={showPrivacy}
+        onClose={() => setShowPrivacy(false)}
+        title="Privacy Policy"
+      >
+        <div className="prose prose-sm max-w-none text-gray-700">
+          <h3 className="text-lg font-bold mb-4">1. Information We Collect</h3>
+          <p className="mb-4">
+            We collect personal information including name, email address, phone number, company details, and payment information when you register for the event or purchase tickets.
+          </p>
+
+          <h3 className="text-lg font-bold mb-4">2. How We Use Your Information</h3>
+          <p className="mb-4">
+            Your information is used to process ticket purchases, communicate event updates, provide customer support, and enhance your event experience. We may also use it for future event marketing with your consent.
+          </p>
+
+          <h3 className="text-lg font-bold mb-4">3. Information Sharing</h3>
+          <p className="mb-4">
+            We do not sell, trade, or rent your personal information to third parties. Information may be shared with trusted service providers who assist in event operations, subject to confidentiality agreements.
+          </p>
+
+          <h3 className="text-lg font-bold mb-4">4. Data Security</h3>
+          <p className="mb-4">
+            We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. Payment information is processed through secure, encrypted channels.
+          </p>
+
+          <h3 className="text-lg font-bold mb-4">5. Cookies and Tracking</h3>
+          <p className="mb-4">
+            Our website uses cookies to improve user experience and analyze website traffic. You can control cookie settings through your browser preferences.
+          </p>
+
+          <h3 className="text-lg font-bold mb-4">6. Your Rights</h3>
+          <p className="mb-4">
+            You have the right to access, update, or delete your personal information. You may also opt out of marketing communications at any time by contacting us or using unsubscribe links.
+          </p>
+
+          <h3 className="text-lg font-bold mb-4">7. Contact Information</h3>
+          <p className="mb-4">
+            For privacy-related questions or concerns, please contact us at contact@infinityaengines.com or +971 50 337 9182.
+          </p>
+
+          <h3 className="text-lg font-bold mb-4">8. Policy Updates</h3>
+          <p className="mb-4">
+            This privacy policy may be updated periodically. Changes will be posted on our website with the effective date. Continued use of our services constitutes acceptance of the updated policy.
+          </p>
+        </div>
+      </Modal>
+    </>
   )
 }
 

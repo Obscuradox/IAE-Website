@@ -4,43 +4,70 @@ import React from 'react'
 import Image from 'next/image'
 
 const LocationsSection = () => {
+  // Function to detect if user is on Chrome desktop
+  const isChromeBrowser = () => {
+    if (typeof window === 'undefined') return false
+    const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    return isChrome && !isMobile
+  }
+
+  // Function to handle metaverse button click
+  const handleMetaverseClick = (e: React.MouseEvent) => {
+    if (typeof window === 'undefined') return
+    
+    const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    
+    if (!isChrome || isMobile) {
+      e.preventDefault()
+      alert('The metaverse experience is live and viewable on a Chrome browser on a desktop device.')
+      return
+    }
+    
+    // If Chrome desktop, proceed with the link
+    window.open('https://explore.unyted.world/scene?id=4a6eefc0-3b92-11f0-bc79-02243b6f7d63', '_blank')
+  }
+
   return (
-    <section id="locations" className="bg-white py-8 sm:py-12 lg:py-16">
+    <section className="bg-[#FDF6E8] py-8 sm:py-12 lg:py-16">
       <div className="max-w-sm mx-auto px-4 sm:max-w-2xl sm:px-6 lg:max-w-7xl lg:px-8">
-        {/* Section Header - Mobile optimized */}
-        <div className="text-center mb-6 sm:mb-8 lg:mb-16">
-          <h2 className="text-[#151412] font-euclid-square font-light leading-tight mb-2 sm:mb-4 text-h2">
-            2 Locations
+        
+        {/* Section Header */}
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-[#151412] font-euclid-square font-light leading-tight mb-4 text-h2">
+            Event Locations
           </h2>
-          <p className="text-[#151412] font-euclid-square leading-tight opacity-60 text-responsive-body">
-            Two locations for both the digital and physical world
+          <p className="text-[#151412]/70 font-euclid-square leading-tight text-responsive-body">
+            Join us in person or virtually from anywhere in the world
           </p>
         </div>
 
-        {/* Locations Cards - Separated layout */}
-        <div className="flex flex-col gap-8 sm:flex-row sm:gap-6 lg:gap-8 justify-center">
+        {/* Locations Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          
           {/* IRL Location */}
-          <div className="w-full sm:w-1/2 lg:w-[704px]">
+          <div className="text-center space-y-6">
             {/* Icon and Label */}
-            <div className="flex items-center justify-center mb-4">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-[#151412] rounded-full flex items-center justify-center mr-4">
-                <svg className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="white" strokeWidth="2"/>
-                  <circle cx="12" cy="10" r="3" stroke="white" strokeWidth="2"/>
+            <div className="flex flex-col items-center space-y-4">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#151412] rounded-full flex items-center justify-center">
+                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 className="text-[#151412] font-euclid-square font-bold leading-tight uppercase text-3xl sm:text-4xl lg:text-5xl">
+              <h3 className="text-[#151412] font-euclid-square font-bold text-3xl sm:text-4xl lg:text-5xl">
                 IRL
               </h3>
             </div>
             
-            {/* Image without overlay */}
-            <div className="relative w-full h-48 sm:h-64 lg:h-[400px] rounded-2xl overflow-hidden mb-4 bg-[var(--color-image-bg)]">
+            {/* Clean Image */}
+            <div className="relative w-full h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden">
               <picture>
                 <source srcSet="/images/locations/irl-location.webp" type="image/webp" />
                 <Image
                   src="/images/locations/irl-location.jpg"
-                  alt="IRL Location - The Agenda, Dubai Media City"
+                  alt="The Agenda Dubai Media City - IRL Event Venue"
                   fill
                   className="object-cover"
                   loading="lazy"
@@ -50,34 +77,47 @@ const LocationsSection = () => {
             
             {/* Description underneath */}
             <div className="text-center">
-              <p className="text-[#151412] font-euclid-square leading-relaxed text-base sm:text-lg lg:text-xl">
-                Experience the event in person at<br />
+              <p className="text-[#151412] font-euclid-square leading-relaxed text-base sm:text-lg lg:text-xl mb-4">
+                Experience the energy live at<br />
                 <span className="font-bold">The Agenda, Dubai Media City</span>
               </p>
+              
+              {/* Reserve Your Spot Button */}
+              <a 
+                href="https://lu.ma/q7jwgx15"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-6 py-3 bg-[#151412] text-white font-euclid-square font-medium text-base rounded-lg hover:bg-gray-800 transition-colors duration-200"
+              >
+                <span>Reserve Your Spot!</span>
+                <svg className="w-4 h-4 ml-2 transition-transform hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
             </div>
           </div>
 
           {/* Virtual Location */}
-          <div className="w-full sm:w-1/2 lg:w-[704px]">
+          <div className="text-center space-y-6">
             {/* Icon and Label */}
-            <div className="flex items-center justify-center mb-4">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-[#151412] rounded-full flex items-center justify-center mr-4">
-                <svg className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 3L2 21L22 12L2 3Z" stroke="white" strokeWidth="2" strokeLinejoin="round"/>
+            <div className="flex flex-col items-center space-y-4">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#151412] rounded-full flex items-center justify-center">
+                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                 </svg>
               </div>
-              <h3 className="text-[#151412] font-euclid-square font-bold leading-tight uppercase text-3xl sm:text-4xl lg:text-5xl">
+              <h3 className="text-[#151412] font-euclid-square font-bold text-3xl sm:text-4xl lg:text-5xl">
                 Virtual
               </h3>
             </div>
             
-            {/* Image without overlay */}
-            <div className="relative w-full h-48 sm:h-64 lg:h-[400px] rounded-2xl overflow-hidden mb-4 bg-[var(--color-image-bg)]">
+            {/* Clean Image */}
+            <div className="relative w-full h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden">
               <picture>
                 <source srcSet="/images/locations/virtual-location.webp" type="image/webp" />
                 <Image
                   src="/images/locations/virtual-location.jpg"
-                  alt="Virtual Location - Metaverse Experience"
+                  alt="Virtual Metaverse Event Experience"
                   fill
                   className="object-cover"
                   loading="lazy"
@@ -87,10 +127,21 @@ const LocationsSection = () => {
             
             {/* Description underneath */}
             <div className="text-center">
-              <p className="text-[#151412] font-euclid-square leading-relaxed text-base sm:text-lg lg:text-xl">
+              <p className="text-[#151412] font-euclid-square leading-relaxed text-base sm:text-lg lg:text-xl mb-4">
                 Join from anywhere in the world through our<br />
                 <span className="font-bold">immersive metaverse experience</span>
               </p>
+              
+              {/* Explore Metaverse Button - Only show on Chrome desktop, alert on mobile */}
+              <button 
+                onClick={handleMetaverseClick}
+                className="inline-flex items-center justify-center px-6 py-3 bg-[#151412] text-white font-euclid-square font-medium text-base rounded-lg hover:bg-gray-800 transition-colors duration-200"
+              >
+                <span>Explore The Metaverse</span>
+                <svg className="w-4 h-4 ml-2 transition-transform hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>

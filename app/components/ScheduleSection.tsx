@@ -6,21 +6,6 @@ const ScheduleSection = () => {
   const scheduleData = [
     {
       day: "D1",
-      date: "June 12",
-      events: [
-        "Workshop 2: Innovation & Digital Transformation for Luxury Brands",
-        "Workshop 3: Next-Gen Interactive Retail (VR / AR / XR & AI)",
-        "Workshop 4: Business of Fashion",
-        "Entertainment — DJ Set",
-        "Networking Session",
-        "Keynote: AI in Luxury Retail",
-        "Presentation: AI-Driven Retail Solutions",
-        "Fashion Factor Master Class — Make-Up & Hairstyling",
-        "Dinner & Networking"
-      ]
-    },
-    {
-      day: "D2",
       date: "June 13",
       events: [
         "Panel 1: AI in Fashion",
@@ -33,7 +18,7 @@ const ScheduleSection = () => {
       ]
     },
     {
-      day: "D3",
+      day: "D2",
       date: "June 14",
       events: [
         "Keynote: TBD",
@@ -49,7 +34,7 @@ const ScheduleSection = () => {
       ]
     },
     {
-      day: "D4",
+      day: "D3",
       date: "June 15",
       events: [
         "Keynote: TBD",

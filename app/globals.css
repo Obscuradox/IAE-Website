@@ -162,7 +162,7 @@ html {
 
 /* Button Classes */
 .btn-primary {
-  background-color: var(--color-primary-blue);
+  background-color: #000000;
   color: var(--color-white);
   border: none;
   border-radius: var(--border-radius-lg);
@@ -220,7 +220,7 @@ html {
 }
 
 .btn-primary:hover {
-  background-color: #2a3490;
+  background-color: #333333;
   transform: translateY(-1px);
 }
 
@@ -229,7 +229,7 @@ html {
   color: var(--color-dark-bg);
 }
 
-/* Safe Font Loading */
+/* Safe Font Loading - Commented out until font files are available
 @font-face {
   font-family: 'Euclid Circular A';
   font-display: swap;
@@ -247,6 +247,7 @@ html {
   font-display: swap;
   src: url('/fonts/euclid-circular-b.woff2') format('woff2');
 }
+*/
 
 /* Animation Classes */
 .animate-fade-in {
