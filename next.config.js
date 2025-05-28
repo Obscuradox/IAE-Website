@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Output configuration for deployment
+  output: 'standalone',
+  
   // Enable experimental features for better performance
   experimental: {
     optimizeCss: true,

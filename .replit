@@ -1,7 +1,6 @@
 modules = ["nodejs-20"]
 
 run = "npm run start"
-build = "npm run build"
 
 [deployment]
 run = ["sh", "-c", "npm run start"]
