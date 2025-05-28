@@ -87,7 +87,7 @@ const LocationsSection = () => {
                 href="https://lu.ma/q7jwgx15"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 bg-[#151412] text-white font-euclid-square font-medium text-base rounded-lg hover:bg-gray-800 transition-colors duration-200"
+                className="btn-primary font-euclid-square"
               >
                 <span>Reserve Your Spot!</span>
                 <svg className="w-4 h-4 ml-2 transition-transform hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -135,7 +135,7 @@ const LocationsSection = () => {
               {/* Explore Metaverse Button - Only show on Chrome desktop, alert on mobile */}
               <button 
                 onClick={handleMetaverseClick}
-                className="inline-flex items-center justify-center px-6 py-3 bg-[#151412] text-white font-euclid-square font-medium text-base rounded-lg hover:bg-gray-800 transition-colors duration-200"
+                className="btn-primary font-euclid-square"
               >
                 <span>Explore The Metaverse</span>
                 <svg className="w-4 h-4 ml-2 transition-transform hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

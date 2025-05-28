@@ -130,11 +130,14 @@ const PackagesSection = () => {
                   <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 max-w-3xl mx-auto">
                     {[
                       { icon: '🎤', title: 'Stage Time', desc: 'Present to thousands' },
-                      { icon: '🎫', title: '3 VIP Tickets', desc: 'Premium access' },
-                      { icon: '📸', title: 'Influencer Shoot', desc: '1B+ reach potential' },
-                      { icon: '🚀', title: 'Metaverse Access', desc: '1-month networking' }
+                      { icon: '🎫', title: '10 Full Access Tickets', desc: 'Complete event access' },
+                      { icon: '🍽️', title: '10-Person VIP Table', desc: 'KIRA after party' },
+                      { icon: '💼', title: '5% Commission', desc: 'Sales/partnerships/investment' }
                     ].map((benefit, idx) => (
-                      <div key={idx} className="bg-white text-black rounded-lg p-3 sm:p-4 lg:p-5 border border-gray-200">
+                      <div key={idx} className="bg-white text-black rounded-lg p-3 sm:p-4 lg:p-5 border border-gray-200 relative overflow-hidden" style={{
+                        border: '2px solid transparent',
+                        background: 'linear-gradient(white, white) padding-box, linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4) border-box'
+                      }}>
                         <div className="text-lg sm:text-xl lg:text-2xl mb-1">{benefit.icon}</div>
                         <div className="text-black font-bold text-xs sm:text-sm lg:text-base">{benefit.title}</div>
                         <div className="text-black/70 text-xs sm:text-xs lg:text-sm">{benefit.desc}</div>
@@ -156,7 +159,7 @@ const PackagesSection = () => {
                   </svg>
                 </Link>
                 <div className="text-white/70 text-xs sm:text-sm lg:text-base">
-                  5% commission on resulting sales • Global exposure guaranteed
+                  AED 55,000 • 5% commission on resulting sales, partnerships, or investment • Global exposure guaranteed
                 </div>
               </div>
             </div>
