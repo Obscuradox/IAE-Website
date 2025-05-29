@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  cache: false,
   // Enable experimental features for better performance
   experimental: {
-    optimizeCss: true,
+    optimizeCss: false,
     optimizePackageImports: ['lucide-react'],
+    webpackBuildWorker: true
   },
   
   // Image optimization configuration
