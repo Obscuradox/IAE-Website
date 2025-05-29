@@ -2,45 +2,28 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
+import { FiEye } from "react-icons/fi";
+import { FiUsers } from "react-icons/fi";
 
-// SVG Icons
-const EyeIcon = () => (
-  <svg 
-    width="39" 
-    height="39" 
-    viewBox="0 0 39 39"
-    className="w-5 h-5 sm:w-6 sm:h-6 lg:w-[39px] lg:h-[39px]"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-<g clip-path="url(#clip0_323_6384)">
-<path d="M2.125 19.876C2.125 19.876 8.625 6.87598 20 6.87598C31.375 6.87598 37.875 19.876 37.875 19.876C37.875 19.876 31.375 32.876 20 32.876C8.625 32.876 2.125 19.876 2.125 19.876Z" stroke="white" stroke-width="2.95455" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M20 24.751C22.6924 24.751 24.875 22.5684 24.875 19.876C24.875 17.1836 22.6924 15.001 20 15.001C17.3076 15.001 15.125 17.1836 15.125 19.876C15.125 22.5684 17.3076 24.751 20 24.751Z" stroke="white" stroke-width="2.95455" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-<defs>
-<clipPath id="clip0_323_6384">
-<rect width="39" height="39" fill="white" transform="translate(0.5 0.375)"/>
-</clipPath>
-</defs>
-  </svg>
-)
+// const EyeIcon = () => (
+//   <Image 
+//     src="/icons/eye.svg" 
+//     alt="Eye icon"
+//     width={39}
+//     height={39}
+//     className="w-5 h-5 sm:w-6 sm:h-6 lg:w-[39px] lg:h-[39px]"
+//   />
+// );
 
-const UsersIcon = () => (
-  <svg
-    width="39"
-    height="39"
-    viewBox="0 0 24 24" // (уточните viewBox из исходного SVG)
-    fill="none"
-    stroke="currentColor" // или явно задайте цвет, например stroke="#333"
-    className="w-5 h-5 sm:w-6 sm:h-6 lg:w-[39px] lg:h-[39px]"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M23 20.9999V18.9999C22.9993 18.1136 22.7044 17.2527 22.1614 16.5522C21.6184 15.8517 20.8581 15.3515 20 15.1299" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M16 3.12988C16.8604 3.35018 17.623 3.85058 18.1676 4.55219C18.7122 5.2538 19.0078 6.11671 19.0078 7.00488C19.0078 7.89305 18.7122 8.75596 18.1676 9.45757C17.623 10.1592 16.8604 10.6596 16 10.8799" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-)
+// const UsersIcon = () => (
+//   <Image 
+//     src="/icons/users.svg" 
+//     alt="Users icon"
+//     width={39}
+//     height={39}
+//     className="w-5 h-5 sm:w-6 sm:h-6 lg:w-[39px] lg:h-[39px]"
+//   />
+// );
 
 // Logo components
 const InfinityAenginesLogo = ({ size = "normal" }) => (
@@ -217,7 +200,7 @@ const HeroContent = () => {
           <div className="flex justify-center items-center gap-8 sm:gap-12 mb-6">
             <div className="flex flex-col items-center">
               <div className="flex items-center gap-2 mb-1">
-                <EyeIcon />
+                <FiEye size={30}/>
                 <span className="font-noto text-white" style={statNumberStyle}>
                   250,000+
                 </span>
@@ -229,7 +212,7 @@ const HeroContent = () => {
 
             <div className="flex flex-col items-center">
               <div className="flex items-center gap-2 mb-1">
-                <UsersIcon />
+                <FiUsers size={30}/>
                 <span className="font-noto text-white" style={statNumberStyle}>
                   2,500+
                 </span>
