@@ -6,21 +6,6 @@ const ScheduleSection = () => {
   const scheduleData = [
     {
       day: "D1",
-      date: "June 12",
-      events: [
-        "Workshop 2: Innovation & Digital Transformation for Luxury Brands",
-        "Workshop 3: Next-Gen Interactive Retail (VR / AR / XR & AI)",
-        "Workshop 4: Business of Fashion",
-        "Entertainment — DJ Set",
-        "Networking Session",
-        "Keynote: AI in Luxury Retail",
-        "Presentation: AI-Driven Retail Solutions",
-        "Fashion Factor Master Class — Make-Up & Hairstyling",
-        "Dinner & Networking"
-      ]
-    },
-    {
-      day: "D2",
       date: "June 13",
       events: [
         "Panel 1: AI in Fashion",
@@ -33,7 +18,7 @@ const ScheduleSection = () => {
       ]
     },
     {
-      day: "D3",
+      day: "D2",
       date: "June 14",
       events: [
         "Keynote: TBD",
@@ -49,7 +34,7 @@ const ScheduleSection = () => {
       ]
     },
     {
-      day: "D4",
+      day: "D3",
       date: "June 15",
       events: [
         "Keynote: TBD",
@@ -71,10 +56,10 @@ const ScheduleSection = () => {
         {/* Header - Mobile optimized */}
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-6 sm:mb-8">
           <h2 className="text-[#151412] font-euclid-square font-light leading-tight mb-3 sm:mb-4 lg:mb-0 text-h2">
-            The shedule
+            The schedule
           </h2>
           <p className="text-[#151412] font-euclid-square leading-tight opacity-50 lg:w-[393px] lg:text-right text-responsive-body">
-            For questions about the program and schedule reach out to —- contact@infinityaengines.com
+            For questions about the program and schedule reach out to — contact@infinityaengines.com
           </p>
         </div>
 

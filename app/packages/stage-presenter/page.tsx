@@ -56,10 +56,10 @@ export default function StagePresenterPage() {
                 {/* Pricing boxes */}
                 <div className="space-y-2 mb-8">
                   <div className="bg-white text-black px-4 py-2 rounded inline-block font-bold text-xl">
-                    AED 35 000
+                    AED 55 000
                   </div>
                   <div className="bg-gray-600 text-white px-4 py-2 rounded inline-block font-bold text-lg ml-2">
-                    $ 9 600
+                    $ 15 000
                   </div>
                 </div>
               </div>
@@ -126,23 +126,32 @@ export default function StagePresenterPage() {
                   ADDED BENEFITS
                 </h3>
                 <div className="space-y-4">
-                  <div className="border-b border-gray-700 pb-4">
+                  <div className="border-b border-gray-700 pb-4 relative overflow-hidden rounded-lg p-4 bg-black" style={{
+                    border: '2px solid transparent',
+                    background: 'linear-gradient(black, black) padding-box, linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4) border-box'
+                  }}>
                     <h4 className="text-lg font-semibold text-white mb-2">
-                      3 VIP Ticket
+                      10 Full Access Tickets
                     </h4>
                     <p className="text-gray-400 text-sm lg:text-base">
-                      Access to VIP areas with priority seating
+                      Complete event access for your team with all sessions and networking areas
                     </p>
                   </div>
-                  <div className="border-b border-gray-700 pb-4">
+                  <div className="border-b border-gray-700 pb-4 relative overflow-hidden rounded-lg p-4 bg-black" style={{
+                    border: '2px solid transparent',
+                    background: 'linear-gradient(black, black) padding-box, linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4) border-box'
+                  }}>
                     <h4 className="text-lg font-semibold text-white mb-2">
-                      2 Afterparty VIP Access Passes
+                      10-Person VIP Table at KIRA After Party
                     </h4>
                     <p className="text-gray-400 text-sm lg:text-base">
-                      Network at our exclusive afterparty.
+                      Exclusive reserved table for 10 at the premium after party venue.
                     </p>
                   </div>
-                  <div className="border-b border-gray-700 pb-4">
+                  <div className="border-b border-gray-700 pb-4 relative overflow-hidden rounded-lg p-4 bg-black" style={{
+                    border: '2px solid transparent',
+                    background: 'linear-gradient(black, black) padding-box, linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4) border-box'
+                  }}>
                     <h4 className="text-lg font-semibold text-white mb-2">
                       1 Influencer Photoshoot
                     </h4>
@@ -150,7 +159,10 @@ export default function StagePresenterPage() {
                       Professional shoot with an influencer (1B+ follower reach) for social media.
                     </p>
                   </div>
-                  <div className="border-b border-gray-700 pb-4">
+                  <div className="border-b border-gray-700 pb-4 relative overflow-hidden rounded-lg p-4 bg-black" style={{
+                    border: '2px solid transparent',
+                    background: 'linear-gradient(black, black) padding-box, linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4) border-box'
+                  }}>
                     <h4 className="text-lg font-semibold text-white mb-2">
                       Logo Placement
                     </h4>
@@ -158,7 +170,10 @@ export default function StagePresenterPage() {
                       On event screens, website, and select materials.
                     </p>
                   </div>
-                  <div className="border-b border-gray-700 pb-4">
+                  <div className="border-b border-gray-700 pb-4 relative overflow-hidden rounded-lg p-4 bg-black" style={{
+                    border: '2px solid transparent',
+                    background: 'linear-gradient(black, black) padding-box, linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4) border-box'
+                  }}>
                     <h4 className="text-lg font-semibold text-white mb-2">
                       Social Media Highlight
                     </h4>
@@ -166,12 +181,15 @@ export default function StagePresenterPage() {
                       1 post and 2 stories on our channels.
                     </p>
                   </div>
-                  <div className="pb-4">
+                  <div className="pb-4 relative overflow-hidden rounded-lg p-4 bg-black" style={{
+                    border: '2px solid transparent',
+                    background: 'linear-gradient(black, black) padding-box, linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4) border-box'
+                  }}>
                     <h4 className="text-lg font-semibold text-white mb-2">
-                      Metaverse Access: 1-month access to our Spaceship hub for virtual networking.
+                      5% Commission Structure
                     </h4>
                     <p className="text-gray-400 text-sm lg:text-base">
-                      Metaverse Access: 1-month access to our Spaceship hub for virtual networking.
+                      5% commission on sales, partnerships, or investment that occur as a result of the event.
                     </p>
                   </div>
                 </div>
@@ -181,9 +199,12 @@ export default function StagePresenterPage() {
               <div className="mt-12">
                 <a 
                   href="mailto:contact@infinityaengines.com?subject=Stage Presenter Package Application&body=Hi, I'm interested in applying for the Stage Presenter Package for the Infinity Ængines × Fashion Factor event. Please find my pitch attached and let me know the next steps."
-                  className="btn-primary font-euclid-square text-center inline-block"
+                  className="btn-primary font-euclid-square text-center inline-flex items-center justify-center"
                 >
-                  Apply for Stage Presenter Package
+                  <span>Reserve Your Spot!</span>
+                  <svg className="w-4 h-4 ml-2 transition-transform hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </a>
               </div>
             </div>

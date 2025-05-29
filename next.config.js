@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  cache: false,
   // Enable experimental features for better performance
   experimental: {
     optimizeCss: false,
@@ -28,8 +27,7 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   
-  // Performance optimizations
-  swcMinify: true,
+  // Performance optimizations (swcMinify is now enabled by default in Next.js 15+)
   
   // Headers for better caching and security
   async headers() {

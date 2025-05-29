@@ -91,7 +91,7 @@ export default function ElitePartnerPage() {
                 <div className="space-y-4">
                   <div className="border-b border-gray-700 pb-4">
                     <h4 className="text-lg font-semibold text-white mb-2">
-                      20min Keynote speech
+                      20-Minute Keynote Speech
                     </h4>
                     <p className="text-gray-400 text-sm lg:text-base">
                       Showcasing your brand's leadership to industry leaders, celebrities & influencers.
@@ -192,7 +192,7 @@ export default function ElitePartnerPage() {
                       Livestream exposure
                     </h4>
                     <p className="text-gray-400 text-sm lg:text-base">
-                      Brand shoutouts & logo during global broadcast moments brand shoutouts & logo during global broadcast moments.
+                      Brand shoutouts & logo during global broadcast moments.
                     </p>
                   </div>
                   <div className="border-b border-gray-700 pb-4">
