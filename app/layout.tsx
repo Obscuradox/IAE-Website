@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'blockchain conference',
     'fashion technology',
     'Dubai events',
-    'Infinity Aengines',
+    'Infinity Ængines',
     'Fashion Factor',
     'tech conference',
     'cryptocurrency',
@@ -50,14 +50,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://infinityaengines-fashionfactor.com'),
+  metadataBase: new URL('https://infinityængines-fashionfactor.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://infinityaengines-fashionfactor.com',
+    url: 'https://infinityængines-fashionfactor.com',
     siteName: 'Infinity Ængines × Fashion Factor',
     title: '🚀 The Ultimate Innovation Show - Infinity Ængines × Fashion Factor | June 13-15, Dubai 🇦🇪',
     description: '🎯 Join 2500+ participants & 250,000+ live viewers for the most innovative fashion-tech event of 2024!\n\n📅 June 13-15, 2024\n📍 The Agenda, Dubai Media City\n\n✨ What awaits you:\n• Blockchain & AI in Fashion\n• Runway Shows with 3D Metaverse\n• Expert Workshops (Web3, AR/VR, AI)\n• Innovator Pitches & Awards\n• Virtual & Physical Attendance\n• Networking with Industry Leaders\n\n🎪 Featured Speakers:\n• Brock Pierce (USDT Founder)\n• Jonny Depp (Actor & Entrepreneur)\n• Vitalik Buterin (Ethereum Creator)\n• Anna Wintour (Vogue Editor)\n\n🎟️ Limited spots available - Register now!',
@@ -80,8 +80,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@InfinityAengines',
-    creator: '@InfinityAengines',
+    site: '@InfinityÆngines',
+    creator: '@InfinityÆngines',
     title: '🚀 The Ultimate Innovation Show - Fashion × Tech | Dubai June 13-15',
     description: '🎯 2500+ participants, 250K+ viewers! Fashion-tech revolution in Dubai.\n\n✨ Blockchain, AI, Metaverse, Runway Shows\n🎪 Brock Pierce, Industry Leaders\n📍 Dubai Media City\n🎁 Premium Sponsor Packages Available',
     images: ['/images/og-screenshot.jpg'],
@@ -169,11 +169,11 @@ export default function RootLayout({
         
         {/* Additional social media optimization */}
         <meta name="twitter:image:alt" content="Infinity Ængines × Fashion Factor - The Ultimate Innovation Show in Dubai featuring fashion technology, blockchain, AI, and metaverse integration" />
-        <meta name="twitter:domain" content="infinityaengines-fashionfactor.com" />
+        <meta name="twitter:domain" content="infinityængines-fashionfactor.com" />
         
         {/* Rich snippets for messaging apps */}
         <meta property="og:rich_attachment" content="true" />
-        <meta property="og:see_also" content="https://infinityaengines.com" />
+        <meta property="og:see_also" content="https://infinityængines.com" />
         <meta property="og:see_also" content="https://fashionfactor.com" />
         
         {/* Structured Data for Events - Enhanced */}
@@ -210,14 +210,14 @@ export default function RootLayout({
                 {
                   "@type": "Organization",
                   "name": "Infinity Ængines",
-                  "url": "https://infinityaengines.com",
-                  "logo": "https://infinityaengines-fashionfactor.com/images/infinity-aengines-logo.png"
+                  "url": "https://infinityængines.com",
+                  "logo": "https://infinityængines-fashionfactor.com/images/infinity-ængines-logo.png"
                 },
                 {
                   "@type": "Organization", 
                   "name": "Fashion Factor",
                   "url": "https://fashionfactor.com",
-                  "logo": "https://infinityaengines-fashionfactor.com/images/fashion-factor-logo.svg"
+                  "logo": "https://infinityængines-fashionfactor.com/images/fashion-factor-logo.svg"
                 }
               ],
               "performer": [
@@ -242,7 +242,7 @@ export default function RootLayout({
               ],
               "offers": {
                 "@type": "Offer",
-                "url": "https://infinityaengines-fashionfactor.com#packages",
+                "url": "https://infinityængines-fashionfactor.com#packages",
                 "price": "0",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
@@ -250,7 +250,7 @@ export default function RootLayout({
                 "category": "Free Entry"
               },
               "image": [
-                "https://infinityaengines-fashionfactor.com/images/og-screenshot.jpg"
+                "https://infinityængines-fashionfactor.com/images/og-screenshot.jpg"
               ],
               "audience": {
                 "@type": "Audience",
@@ -290,8 +290,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Infinity Ængines",
-              "url": "https://infinityaengines.com",
-              "logo": "https://infinityaengines-fashionfactor.com/images/infinity-aengines-logo.png",
+              "url": "https://infinityængines.com",
+              "logo": "https://infinityængines-fashionfactor.com/images/infinity-ængines-logo.png",
               "description": "Leading innovation company specializing in blockchain technology, fashion tech, and digital transformation",
               "foundingDate": "2020",
               "address": {
@@ -300,15 +300,15 @@ export default function RootLayout({
                 "addressCountry": "AE"
               },
               "sameAs": [
-                "https://twitter.com/InfinityAengines",
-                "https://linkedin.com/company/infinity-aengines",
-                "https://instagram.com/infinityaengines"
+                "https://twitter.com/InfinityÆngines",
+                "https://linkedin.com/company/infinity-ængines",
+                "https://instagram.com/infinityængines"
               ],
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+971-50-123-4567",
                 "contactType": "customer service",
-                "email": "contact@infinityaengines.com"
+                "email": "contact@infinityængines.com"
               }
             })
           }}
@@ -322,7 +322,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "Infinity Ængines × Fashion Factor",
-              "url": "https://infinityaengines-fashionfactor.com",
+              "url": "https://infinityængines-fashionfactor.com",
               "description": "The Ultimate Innovation Show featuring fashion technology, blockchain, AI, and metaverse integration",
               "publisher": {
                 "@type": "Organization",
@@ -330,7 +330,7 @@ export default function RootLayout({
               },
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://infinityaengines-fashionfactor.com/search?q={search_term_string}",
+                "target": "https://infinityængines-fashionfactor.com/search?q={search_term_string}",
                 "query-input": "required name=search_term_string"
               }
             })

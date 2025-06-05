@@ -65,11 +65,11 @@ const FooterSection = () => {
               <div className="mb-6">
                 <div className="flex items-center gap-2 mb-4">
                   <Image 
-                    src="/images/infinity-aengines-logo.png" 
-                    alt="Infinity Aengines Logo" 
-                    width={40} 
-                    height={80}
-                    className="object-contain"
+                    src="/images/IAELOGO.png" 
+                    alt="Infinity Ængines Logo" 
+                    width={100} 
+                    height={53}
+                    className="object-contain h-10 w-auto invert brightness-0 filter"
                   />
                   <span className="text-[#FDF6E8] text-lg">×</span>
                   <Image 
@@ -81,7 +81,7 @@ const FooterSection = () => {
                   />
                 </div>
                 <h3 className="text-[#FDF6E8] font-euclid-square font-bold text-lg lg:text-xl mb-2">
-                  The Ultimate Innovation Show
+                  Infinity Ængines
                 </h3>
                 <p className="text-[#FDF6E8]/80 font-euclid-square text-sm lg:text-base">
                   📅 June 13-15, 2024 | 11am daily
@@ -149,10 +149,10 @@ const FooterSection = () => {
               <ul className="space-y-2">
                 <li>
                   <a 
-                    href="mailto:contact@infinityaengines.com"
+                    href="mailto:contact@infinityængines.com"
                     className="block text-[#FDF6E8]/80 font-euclid-square hover:text-white transition-colors duration-300 text-sm lg:text-base"
                   >
-                    📧 contact@infinityaengines.com
+                    📧 contact@infinityængines.com
                   </a>
                 </li>
                 <li>
@@ -215,7 +215,7 @@ const FooterSection = () => {
               </h4>
               <div className="flex justify-center items-center gap-6">
                 <a 
-                  href="https://www.instagram.com/infinityaengines/"
+                  href="https://www.instagram.com/infinityængines/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#FDF6E8]/80 hover:text-white transition-colors duration-300"
@@ -224,7 +224,7 @@ const FooterSection = () => {
                   <InstagramIcon />
                 </a>
                 <a 
-                  href="https://www.linkedin.com/company/infinity-aengines/?viewAsMember=true"
+                  href="https://www.linkedin.com/company/infinity-ængines/?viewAsMember=true"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#FDF6E8]/80 hover:text-white transition-colors duration-300"
@@ -354,7 +354,7 @@ const FooterSection = () => {
 
           <h3 className="text-lg font-bold mb-4">7. Contact Information</h3>
           <p className="mb-4">
-            For privacy-related questions or concerns, please contact us at contact@infinityaengines.com or +971 50 337 9182.
+            For privacy-related questions or concerns, please contact us at contact@infinityængines.com or +971 50 337 9182.
           </p>
 
           <h3 className="text-lg font-bold mb-4">8. Policy Updates</h3>

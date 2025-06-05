@@ -27,20 +27,17 @@ import { FiUsers } from "react-icons/fi";
 
 // Logo components
 const InfinityAenginesLogo = ({ size = "normal" }) => (
-  <picture>
-    <source srcSet="/images/infinity-aengines-logo.webp" type="image/webp" />
-    <Image 
-      src="/images/infinity-aengines-logo.png" 
-      alt="Infinity Aengines Logo" 
-      width={122} 
-      height={244}
-      priority={size === "large"}
-      className={size === "large" 
-        ? "h-[48px] w-auto object-contain"
-        : "h-[32px] w-auto object-contain"
-      }
-    />
-  </picture>
+  <Image 
+    src="/images/IAELOGO.png" 
+    alt="Infinity Ængines Logo" 
+    width={300} 
+    height={160}
+    priority={size === "large"}
+    className={size === "large" 
+      ? "w-[83px] h-auto object-contain invert brightness-0 filter"
+      : "w-[62px] h-auto object-contain invert brightness-0 filter"
+    }
+  />
 )
 
 const FashionFactorLogo = ({ size = "normal" }) => (
@@ -156,7 +153,7 @@ const HeroContent = () => {
           <div className="flex flex-col sm:flex-row items-end sm:items-center gap-2 w-full sm:w-auto">
             <div className="flex h-12 border border-white rounded-sm overflow-hidden w-full sm:w-auto">
               <div className="bg-white text-black px-4 flex items-center min-w-[120px] h-full">
-                <span className="font-euclid-square font-bold text-sm">June 12-15</span>
+                <span className="font-euclid-square font-bold text-sm">June 13-15</span>
               </div>
               <div className="text-white px-4 flex items-center h-full flex-1">
                 <span className="font-euclid-square font-bold text-xs leading-tight">
@@ -171,26 +168,28 @@ const HeroContent = () => {
         <main className="flex flex-col items-center text-center flex-1 justify-center -mt-8">
           <div className="mb-6">
             <h1 className="text-white leading-tight uppercase text-h1" style={{ fontFamily: 'var(--font-euclid)' }}>
-              <div className="text-responsive-small font-normal mb-1">The</div>
-              <div className="font-bold mb-1">Ultimate</div>
-              <div className="font-bold mb-1">Innovation</div>
-              <div className="font-bold">Show</div>
+              <div className="font-bold mb-1">Infinity</div>
+              <div className="font-bold">Ængines</div>
             </h1>
           </div>
     
           {/* CTA Buttons */}
           <div className="flex flex-col w-full gap-3 mb-8 sm:flex-row sm:gap-4 sm:w-auto sm:mb-12">
             <a 
-              href="mailto:contact@infinityaengines.com?subject=Ticket Inquiry&body=Hi, I'm interested in getting tickets for the Infinity Ængines × Fashion Factor event. Please provide more information."
+              href="https://lu.ma/q7jwgx15"
               className="btn-primary font-euclid-square text-center"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Buy Tickets
+              Request Access
             </a>
             <a 
-              href="mailto:contact@infinityaengines.com?subject=Sponsorship Inquiry&body=Hi, I'm interested in becoming a sponsor for the Infinity Ængines × Fashion Factor event. Please send me the sponsorship packages and details."
+              href="https://lu.ma/q7jwgx15"
               className="btn-secondary font-euclid-square text-center"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Get sponsor
+              Request Sponsorship
             </a>
           </div>
         </main>

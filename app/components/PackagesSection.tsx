@@ -17,7 +17,7 @@ const PackagesSection = () => {
       title: 'Elite Partner',
       subtitle: 'Ultimate Exposure',
       description: 'The pinnacle of partnership. Get 20-minute keynote speaking slot, 50 VIP tickets, premium booth space, and unmatched brand visibility across all event channels.',
-      price: 'AED 750,000',
+      price: 'SOLD OUT',
       image: '/images/packages/elite-partner.webp',
       fallback: '/images/packages/elite-partner.jpg',
       link: '/packages/elite-partner',
@@ -29,7 +29,7 @@ const PackagesSection = () => {
       title: 'Premier Partner',
       subtitle: 'Strategic Leadership',
       description: 'Lead industry discussions with 15-minute panel leadership, 25 VIP tickets, branded activations, and comprehensive media coverage for maximum impact.',
-      price: 'AED 350,000',
+      price: 'SOLD OUT',
       image: '/images/packages/premier-partner.webp',
       fallback: '/images/packages/premier-partner.jpg',
       link: '/packages/premier-partner',
@@ -41,7 +41,7 @@ const PackagesSection = () => {
       title: 'Core Partner',
       subtitle: 'Essential Presence',
       description: 'Perfect entry-level partnership with 5-minute stage presence, 10 VIP tickets, strategic booth placement, and targeted social media campaigns.',
-      price: 'AED 100,000',
+      price: 'SOLD OUT',
       image: '/images/packages/core-partner.webp',
       fallback: '/images/packages/core-partner.jpg',
       link: '/packages/core-partner',
@@ -149,17 +149,13 @@ const PackagesSection = () => {
 
               {/* Bottom Section - CTA - Fixed at bottom with guaranteed space */}
               <div className="text-center space-y-3 sm:space-y-4 mt-auto">
-                <Link 
-                  href="/packages/stage-presenter"
-                  className="inline-flex items-center justify-center bg-white text-black font-euclid-square font-bold py-3 px-6 sm:py-4 sm:px-8 lg:py-5 lg:px-10 rounded-xl hover:bg-white/90 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl text-sm sm:text-base lg:text-lg"
+                <div 
+                  className="inline-flex items-center justify-center bg-gray-500 text-white font-euclid-square font-bold py-3 px-6 sm:py-4 sm:px-8 lg:py-5 lg:px-10 rounded-xl text-sm sm:text-base lg:text-lg cursor-not-allowed"
                 >
-                  <span>Apply Now - Deadline May 30, 2025</span>
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2 sm:ml-3 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
+                  <span>DEADLINE PASSED</span>
+                </div>
                 <div className="text-white/70 text-xs sm:text-sm lg:text-base">
-                  AED 55,000 • 5% commission on resulting sales, partnerships, or investment • Global exposure guaranteed
+                  Applications are no longer being accepted for this package
                 </div>
               </div>
             </div>
@@ -324,7 +320,7 @@ const PackagesSection = () => {
               </p>
               
               <a 
-                href="mailto:contact@infinityaengines.com?subject=Custom Sponsorship Inquiry&body=Hi, I'm interested in discussing a custom sponsorship package for the Infinity Ængines × Fashion Factor event. Please contact me to explore tailored options."
+                href="mailto:contact@infinityængines.com?subject=Custom Sponsorship Inquiry&body=Hi, I'm interested in discussing a custom sponsorship package for the Infinity Ængines × Fashion Factor event. Please contact me to explore tailored options."
                 className="inline-flex items-center justify-center w-full bg-white text-black font-euclid-square font-medium py-3 px-5 sm:py-3.5 sm:px-6 rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-[0_2px_8px_0_rgba(255,255,255,0.15)] hover:shadow-[0_4px_12px_0_rgba(255,255,255,0.2)] text-sm sm:text-base"
               >
                 <span>Discuss Custom Package</span>
@@ -354,7 +350,7 @@ const PackagesSection = () => {
               </p>
               
               <a 
-                href="mailto:contact@infinityaengines.com?subject=Event Information Request&body=Hi, I would like to receive detailed information about the Infinity Ængines × Fashion Factor event, including venue details, audience demographics, and partnership opportunities."
+                href="mailto:contact@infinityængines.com?subject=Event Information Request&body=Hi, I would like to receive detailed information about the Infinity Ængines × Fashion Factor event, including venue details, audience demographics, and partnership opportunities."
                 className="inline-flex items-center justify-center w-full bg-white text-black font-euclid-square font-medium py-3 px-5 sm:py-3.5 sm:px-6 rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-[0_2px_8px_0_rgba(255,255,255,0.15)] hover:shadow-[0_4px_12px_0_rgba(255,255,255,0.2)] text-sm sm:text-base"
               >
                 <span>Get Event Info</span>
