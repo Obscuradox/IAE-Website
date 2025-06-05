@@ -44,12 +44,12 @@ const FashionFactorLogo = ({ size = "normal" }) => (
   <Image 
     src="/images/fashion-factor-logo.svg" 
     alt="Fashion Factor Logo" 
-    width={83} 
-    height={83}
+    width={300} 
+    height={160}
     priority={size === "large"}
     className={size === "large" 
-      ? "w-[83px] h-[83px] object-contain"
-      : "w-[62px] h-[62px] object-contain"
+      ? "w-[83px] h-auto object-contain"
+      : "w-[62px] h-auto object-contain"
     }
   />
 )
