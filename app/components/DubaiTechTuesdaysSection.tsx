@@ -45,13 +45,19 @@ const DubaiTechTuesdaysSection = () => {
           {/* Left Side - Event Flyer */}
           <div className="space-y-6">
             <div className="relative w-full h-80 sm:h-96 lg:h-[500px] rounded-2xl overflow-hidden bg-gray-900 border border-blue-500/30 flex items-center justify-center">
-              <Image
-                src="/images/temp/FLYER.jpeg"
-                alt="Dubai Tech Tuesdays Pre-Launch Party Flyer"
-                fill
-                className="object-contain"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet="/images/temp/FLYER-optimized.webp" type="image/webp" />
+                <Image
+                  src="/images/temp/FLYER-optimized.jpg"
+                  alt="Dubai Tech Tuesdays Pre-Launch Party Flyer"
+                  fill
+                  className="object-contain"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                  quality={90}
+                  priority={false}
+                />
+              </picture>
             </div>
             
                          {/* Register Button - Mobile/Tablet */}
