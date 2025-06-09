@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     url: 'https://infinityængines-fashionfactor.com',
     siteName: 'Infinity Ængines × Fashion Factor',
     title: '🚀 The Ultimate Innovation Show - Infinity Ængines × Fashion Factor | June 13-15, Dubai 🇦🇪',
-    description: '🎯 Join 2500+ participants & 250,000+ live viewers for the most innovative fashion-tech event of 2024!\n\n📅 June 13-15, 2024\n📍 The Agenda, Dubai Media City\n\n✨ What awaits you:\n• Blockchain & AI in Fashion\n• Runway Shows with 3D Metaverse\n• Expert Workshops (Web3, AR/VR, AI)\n• Innovator Pitches & Awards\n• Virtual & Physical Attendance\n• Networking with Industry Leaders\n\n🎪 Featured Speakers:\n• Brock Pierce (USDT Founder)\n• Jonny Depp (Actor & Entrepreneur)\n• Vitalik Buterin (Ethereum Creator)\n• Anna Wintour (Vogue Editor)\n\n🎟️ Limited spots available - Register now!',
+    description: '🎯 Join 2500+ participants & 250,000+ live viewers for the most innovative fashion-tech event of 2024!\n\n📅 June 13-15, 2024\n📍 The Agenda, Dubai Media City\n\n✨ What awaits you:\n• Blockchain & AI in Fashion\n• Runway Shows with 3D Metaverse\n• Expert Workshops (Web3, AR/VR, AI)\n• Innovator Pitches & Awards\n• Virtual & Physical Attendance\n• Networking with Industry Leaders\n\n🎪 Featured Speakers:\n• Jonny Depp (Actor & Entrepreneur)\n• Vitalik Buterin (Ethereum Creator)\n• Anna Wintour (Vogue Editor)\n\n🎟️ Limited spots available - Register now!',
     images: [
       {
         url: '/images/og-screenshot.jpg',
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     site: '@InfinityÆngines',
     creator: '@InfinityÆngines',
     title: '🚀 The Ultimate Innovation Show - Fashion × Tech | Dubai June 13-15',
-    description: '🎯 2500+ participants, 250K+ viewers! Fashion-tech revolution in Dubai.\n\n✨ Blockchain, AI, Metaverse, Runway Shows\n🎪 Brock Pierce, Industry Leaders\n📍 Dubai Media City\n🎁 Premium Sponsor Packages Available',
+    description: '🎯 2500+ participants, 250K+ viewers! Fashion-tech revolution in Dubai.\n\n✨ Blockchain, AI, Metaverse, Runway Shows\n🎪 Industry Leaders\n📍 Dubai Media City\n🎁 Premium Sponsor Packages Available',
     images: ['/images/og-screenshot.jpg'],
   },
   robots: {
