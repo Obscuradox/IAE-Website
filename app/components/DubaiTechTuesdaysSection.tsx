@@ -54,22 +54,17 @@ const DubaiTechTuesdaysSection = () => {
               />
             </div>
             
-            {/* Register Button - Mobile/Tablet */}
-            <div className="lg:hidden">
-              <a 
-                href="https://lu.ma/dtt49"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-euclid-square font-bold text-base rounded-lg transition-all duration-300 w-full relative overflow-hidden group
-                hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]
-                hover:scale-105 transform"
-              >
-                <span className="relative z-10">REGISTER NOW</span>
-                <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
+                         {/* Register Button - Mobile/Tablet */}
+             <div className="lg:hidden">
+               <a 
+                 href="https://lu.ma/DubaiTechTues49"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="btn-primary font-euclid-square text-center w-full"
+               >
+                 REGISTER NOW
+               </a>
+             </div>
           </div>
 
           {/* Right Side - Event Details */}
@@ -100,14 +95,18 @@ const DubaiTechTuesdaysSection = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-400 text-lg">🍹</span>
-                  <div>
-                    <div className="font-medium">Food & Drink Packages</div>
-                    <div className="text-sm opacity-70">250 AED (3 drinks + Casa Focaccia) or 150 AED (3 drinks)</div>
-                    <div className="text-sm text-green-400">Women enter FREE!</div>
-                  </div>
-                </div>
+                                 <div className="flex items-start gap-3">
+                   <span className="text-blue-400 text-lg">🍹</span>
+                   <div>
+                     <div className="font-medium">Food & Drink Packages</div>
+                     <div className="text-xs sm:text-sm opacity-70 leading-relaxed">
+                       250 AED (3 drinks + Casa Focaccia)<br className="sm:hidden" />
+                       <span className="hidden sm:inline"> or </span>
+                       <span className="sm:hidden">OR </span>150 AED (3 drinks only)
+                     </div>
+                     <div className="text-xs sm:text-sm text-green-400 font-medium">Women enter FREE!</div>
+                   </div>
+                 </div>
               </div>
             </div>
 
@@ -116,20 +115,20 @@ const DubaiTechTuesdaysSection = () => {
               <h4 className="text-white font-euclid-square font-bold text-lg mb-4">
                 Featured Speakers (7:30 - 8:30 PM)
               </h4>
-              <div className="space-y-3 text-white/80 font-euclid-square text-sm">
-                <div>
-                  <div className="font-semibold text-blue-300">FARSH FALLAH</div>
-                  <div className="text-xs opacity-70">COO of Serenity • 15+ years at Apple, Unity, Samsung • Gaming & Web3 expert</div>
-                </div>
-                <div>
-                  <div className="font-semibold text-purple-300">SAM SINGER & HATIMA TITOVA</div>
-                  <div className="text-xs opacity-70">Infinity Ængines founders • AI-driven business matching platform</div>
-                </div>
-                <div>
-                  <div className="font-semibold text-cyan-300">THOMAS SHERIF</div>
-                  <div className="text-xs opacity-70">CEO Fashion Factor • Middle East's signature fashion-competition platform</div>
-                </div>
-              </div>
+                             <div className="space-y-3 text-white/80 font-euclid-square text-xs sm:text-sm">
+                 <div>
+                   <div className="font-semibold text-blue-300 text-sm sm:text-base">FARSH FALLAH</div>
+                   <div className="text-xs opacity-70 leading-relaxed">COO of Serenity • 15+ years at Apple, Unity, Samsung<br className="sm:hidden" /><span className="hidden sm:inline"> • </span><span className="sm:hidden">Gaming & Web3 expert</span><span className="hidden sm:inline">Gaming & Web3 expert</span></div>
+                 </div>
+                 <div>
+                   <div className="font-semibold text-purple-300 text-sm sm:text-base">SAM SINGER & HATIMA TITOVA</div>
+                   <div className="text-xs opacity-70 leading-relaxed">Infinity Ængines founders<br className="sm:hidden" /><span className="hidden sm:inline"> • </span><span className="sm:hidden">AI-driven business matching platform</span><span className="hidden sm:inline">AI-driven business matching platform</span></div>
+                 </div>
+                 <div>
+                   <div className="font-semibold text-cyan-300 text-sm sm:text-base">THOMAS SHERIF</div>
+                   <div className="text-xs opacity-70 leading-relaxed">CEO Fashion Factor<br className="sm:hidden" /><span className="hidden sm:inline"> • </span><span className="sm:hidden">Middle East's signature fashion-competition platform</span><span className="hidden sm:inline">Middle East's signature fashion-competition platform</span></div>
+                 </div>
+               </div>
             </div>
 
             {/* Event Partners */}
@@ -137,20 +136,20 @@ const DubaiTechTuesdaysSection = () => {
               <h4 className="text-white font-euclid-square font-bold text-lg mb-4">
                 Event Partners
               </h4>
-              <div className="space-y-2 text-white/80 font-euclid-square text-sm">
-                <div className="flex items-center gap-2">
-                  <span className="text-blue-400">•</span>
-                  <strong>LUNA PR</strong> - Award-winning PR & communications agency
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-purple-400">•</span>
-                  <strong>INFINITY ÆNGINES</strong> - AI-powered networking platform
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-cyan-400">•</span>
-                  <strong>CHESS ARTS CLUB</strong> - Intellectual gaming experience
-                </div>
-              </div>
+                             <div className="space-y-2 text-white/80 font-euclid-square text-xs sm:text-sm">
+                 <div className="flex items-start gap-2">
+                   <span className="text-blue-400 mt-0.5">•</span>
+                   <span><strong>LUNA PR</strong> - Award-winning PR & communications agency</span>
+                 </div>
+                 <div className="flex items-start gap-2">
+                   <span className="text-purple-400 mt-0.5">•</span>
+                   <span><strong>INFINITY ÆNGINES</strong> - AI-powered networking platform</span>
+                 </div>
+                 <div className="flex items-start gap-2">
+                   <span className="text-cyan-400 mt-0.5">•</span>
+                   <span><strong>CHESS ARTS CLUB</strong> - Intellectual gaming experience</span>
+                 </div>
+               </div>
             </div>
 
             {/* What to Expect */}
@@ -158,42 +157,37 @@ const DubaiTechTuesdaysSection = () => {
               <h4 className="text-white font-euclid-square font-bold text-lg mb-4">
                 What to Expect
               </h4>
-              <ul className="space-y-2 text-white/80 font-euclid-square text-sm">
-                <li className="flex items-center gap-2">
-                  <span className="text-blue-400">•</span>
-                  6:00-7:30 PM: Networking & Chess tournaments
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-purple-400">•</span>
-                  7:30-8:30 PM: Expert talks on AI, Web3, and fashion tech
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-cyan-400">•</span>
-                  Premium Japanese cuisine and signature cocktails
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-green-400">•</span>
-                  Connect with tech innovators and industry leaders
-                </li>
-              </ul>
+                             <ul className="space-y-2 text-white/80 font-euclid-square text-xs sm:text-sm">
+                 <li className="flex items-start gap-2">
+                   <span className="text-blue-400 mt-0.5">•</span>
+                   <span>6:00-7:30 PM: Networking & Chess tournaments</span>
+                 </li>
+                 <li className="flex items-start gap-2">
+                   <span className="text-purple-400 mt-0.5">•</span>
+                   <span>7:30-8:30 PM: Expert talks on AI, Web3, and fashion tech</span>
+                 </li>
+                 <li className="flex items-start gap-2">
+                   <span className="text-cyan-400 mt-0.5">•</span>
+                   <span>Premium Japanese cuisine and signature cocktails</span>
+                 </li>
+                 <li className="flex items-start gap-2">
+                   <span className="text-green-400 mt-0.5">•</span>
+                   <span>Connect with tech innovators and industry leaders</span>
+                 </li>
+               </ul>
             </div>
 
-            {/* Register Button - Desktop */}
-            <div className="hidden lg:block pt-4">
-              <a 
-                href="https://lu.ma/dtt49"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-euclid-square font-bold text-base rounded-lg transition-all duration-300 w-full sm:w-auto relative overflow-hidden group
-                hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]
-                hover:scale-105 transform"
-              >
-                <span className="relative z-10">REGISTER NOW</span>
-                <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
+                         {/* Register Button - Desktop */}
+             <div className="hidden lg:block pt-4">
+               <a 
+                 href="https://lu.ma/DubaiTechTues49"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="btn-primary font-euclid-square text-center"
+               >
+                 REGISTER NOW
+               </a>
+             </div>
           </div>
         </div>
 
